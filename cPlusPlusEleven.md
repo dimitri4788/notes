@@ -114,18 +114,16 @@ lengthy = std::get<0>(proof);  // Assign to 'lengthy' the value 18.
 std::get<3>(proof) = " Beautiful!";  // Modify the tuple’s fourth element.
 ```
 - constexpr
-    - A constant expression has never been allowed to contain a function call or object constructor. So a piece of code as simple as this is illegal:
-```cpp
-int get_five() {return 5;}
-int some_value[get_five() + 7]; // Create an array of 12 integers. Ill-formed C++
-```
-    - This was not legal in C++03, because get_five() + 7 is not a constant expression.
+    - A constant expression has never been allowed to contain a function call or object constructor.
     - A C++03 compiler has no way of knowing if get_five() actually is constant at runtime.
     - In theory, this function could affect a global variable, call other non-runtime constant functions, etc.
     - C++11 introduced the keyword constexpr, which allows the user to guarantee that a function or object constructor is a compile-time constant.
     - This allows the compiler to understand, and verify, that get_five() is a compile-time constant.
     - The above example can be rewritten as follows:
 ```cpp
+int get_five() {return 5;}
+int some_value[get_five() + 7]; // Create an array of 12 integers. Ill-formed C++
+
 constexpr int get_five() {return 5;}
 int some_value[get_five() + 7]; // Create an array of 12 integers. Legal C++11
 ```
