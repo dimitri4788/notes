@@ -67,7 +67,7 @@ enum class Options {None, One, All};
 Options o = Options::All;
 ```
 - Lambdas
-- non member begin() and end()
+- Non member begin() and end()
 ```cpp
 vector<int> v;
 int a[100];
@@ -113,6 +113,28 @@ test_tuple proof (18, 6.5, lengthy, "Ciao!");
 lengthy = std::get<0>(proof);  // Assign to 'lengthy' the value 18.
 std::get<3>(proof) = " Beautiful!";  // Modify the tuple’s fourth element.
 ```
+- constexpr
+    - A constant expression has never been allowed to contain a function call or object constructor. So a piece of code as simple as this is illegal:
+```cpp
+int get_five() {return 5;}
+int some_value[get_five() + 7]; // Create an array of 12 integers. Ill-formed C++
+```
+    - This was not legal in C++03, because get_five() + 7 is not a constant expression.
+    - A C++03 compiler has no way of knowing if get_five() actually is constant at runtime.
+    - In theory, this function could affect a global variable, call other non-runtime constant functions, etc.
+    - C++11 introduced the keyword constexpr, which allows the user to guarantee that a function or object constructor is a compile-time constant.
+    - This allows the compiler to understand, and verify, that get_five() is a compile-time constant.
+    - The above example can be rewritten as follows:
+```cpp
+constexpr int get_five() {return 5;}
+int some_value[get_five() + 7]; // Create an array of 12 integers. Legal C++11
+```
+
+
+
+
+
+
 
 ### C++14
 - auto
@@ -141,7 +163,7 @@ void test()
     g(a); // warning: 'g' is deprecated: g() is thread-unsafe. Use h() instead
 }
 ```
-- Digit separatorsA
+- Digit separators
 ```cpp
 auto integer_literal = 1'000'000;
 auto floating_point_literal = 0.000'015'3;
@@ -159,3 +181,5 @@ auto silly_example = 1'0'0'000'00;
 ### Sources
 - http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer#lambdas
 - http://blog.smartbear.com/c-plus-plus/the-biggest-changes-in-c11-and-why-you-should-care/
+- http://en.wikipedia.org/wiki/C%2B%2B11#Tuple_types
+- http://en.wikipedia.org/wiki/C%2B%2B14
