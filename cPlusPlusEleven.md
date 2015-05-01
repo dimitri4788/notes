@@ -127,11 +127,27 @@ int some_value[get_five() + 7]; // Create an array of 12 integers. Ill-formed C+
 constexpr int get_five() {return 5;}
 int some_value[get_five() + 7]; // Create an array of 12 integers. Legal C++11
 ```
-
-
-
-
-
+- Regular expressions
+    - Header name <regex>
+- Threading facilities
+    - std::thread
+    - std::mutex
+    - std::condition_variable
+- Smart pointers
+    - std::unique_ptr
+    - std::shared_ptr
+    - std::weak_ptr
+- Right angle bracket
+    - C++03's parser defines ">>" as the right shift operator or stream extraction operator in all cases.
+    - However, with nested template declarations, there is a tendency for the programmer to neglect to place a space between the two right angle brackets, thus causing a compiler syntax error.
+    - C++11 improves the specification of the parser so that multiple right angle brackets will be interpreted as closing the template argument list where it is reasonable.
+```cpp
+template<bool Test> class SomeType;
+std::vector<SomeType<1>2>> x1;  // Interpreted as a std::vector of SomeType<true>,
+                                // followed by "2 >> x1", which is not legal syntax for a declarator. 1 is true.
+std::vector<SomeType<(1>2)>> x1;  // Interpreted as std::vector of SomeType<false>,
+                                  // followed by the declarator "x1", which is legal C++11 syntax. (1>2) is false.
+```
 
 
 ### C++14
@@ -168,6 +184,17 @@ auto floating_point_literal = 0.000'015'3;
 auto binary_literal = 0b0100'1100'0110;
 auto silly_example = 1'0'0'000'00;
 ```
+- Tuple addressing via type
+    - The std::tuple type introduced in C++11 allows an aggregate of typed values to be indexed by a compile-time constant integer.
+    - C++14 extended this to allow fetching from a tuple by type instead of by index.
+```cpp
+tuple<string, string, int> t("foo", "bar", 7);
+int i = get<int>(t);        // i == 7
+int j = get<2>(t);          // Same as before: j == 7
+string s = get<string>(t);  // Compile-time error due to ambiguity
+```
+
+
 
 
 
