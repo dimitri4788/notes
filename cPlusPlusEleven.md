@@ -102,6 +102,15 @@ for( int i = 1; i <= 4; ++i ) v.push_back(i);
 vector<int>     v   { 1, 2, 3, 4 };
 ```
 - Deleted and Defaulted Functions
+```cpp
+class X
+{
+    public:
+        X();
+        X(const X&) = default;              //use compile-generated default constructor
+        X& operator=(const X &) = delete;   //tells compiler not to use this constructor
+};
+```
 - Threading Library
 - std::array for static length arrays
 - std::tuple
@@ -151,6 +160,63 @@ std::vector<SomeType<(1>2)>> x1;  // Interpreted as std::vector of SomeType<fals
 - New Types
     - long long, unsigned long long: to support 64-bit integers
     - char16_t, char32_t: to support 16-bit and 32-bit character representations
+- Member In-Class Initialization
+```cpp
+class Session
+{
+        int a = 10;     // In-Class Initialization
+        double b {2.5}; // In-Class Initialization
+    public:
+        Session(){}
+        Session(double d) : b(d) {}
+        Session(int x, double y) : a(x), b(d) {}
+};
+```
+- New STL Containers
+    - unordered_map
+    - unordered_multimap
+    - unordered_set
+    - unordered_multiset
+- Inheriting Constructors
+```cpp
+class Base
+{
+    public:
+        Base() : q(0), w(0) {}
+        Base(int k) : q(k), w(100) {}
+        Base(double x) : q(-1), w(x) {}
+        Base(int k, double x) : q(k), w(x) {}
+
+    private:
+        int q;
+        double w;
+};
+
+class Derived
+{
+    public:
+        using Base::Base;
+        Derived() : j(-100) {}
+        Derived(double x) : Base(2*x), j(int(x)) {}
+        Derived(int i) : j(int(x)), Base(i, 0.5*i) {}
+
+    private:
+        short j;
+};
+
+int main()
+{
+    Derived o1;             //use Derived()
+    Derived o2(18.81);      //use Derived(double) instead of Base(double)
+    Derived o3(10, 1.8);    //use Base(int, double)
+
+}
+```
+
+
+
+
+
 
 
 
