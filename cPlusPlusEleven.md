@@ -148,6 +148,20 @@ std::vector<SomeType<1>2>> x1;  // Interpreted as a std::vector of SomeType<true
 std::vector<SomeType<(1>2)>> x1;  // Interpreted as std::vector of SomeType<false>,
                                   // followed by the declarator "x1", which is legal C++11 syntax. (1>2) is false.
 ```
+- New Types
+    - long long, unsigned long long: to support 64-bit integers
+    - char16_t, char32_t: to support 16-bit and 32-bit character representations
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### C++14
