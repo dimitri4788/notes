@@ -1,6 +1,7 @@
 ## Static and Dynamic Libraries
 
 - Static libraries (.a): Library of object code which is linked with, and becomes part of the application.
+    - Static libraries are also known as static archive libraries and static linked shared libraries.
 - Dynamic libraries (.so): There is only one form of this library but it can be used in two ways.
     - Dynamically linked at run time but statically aware. The libraries must be available during compile/link phase. The shared objects are not included into the executable component but are tied to the execution.
     - Dynamically loaded/unloaded and linked during execution (i.e. browser plug-in) using the dynamic linking loader system functions.
