@@ -1,29 +1,28 @@
 ## Makefile tutorial
 
 ### Table of automatic variables:
-```
-$@
+- $@
 The file name of the target of the rule. If the target is an archive member, then ‘$@’ is the name of the archive file. In a pattern rule that has multiple targets (see Introduction to Pattern Rules), ‘$@’ is the name of whichever target caused the rule’s recipe to be run.
 
-$%
+- $%
 The target member name, when the target is an archive member. See Archives. For example, if the target is foo.a(bar.o) then ‘$%’ is bar.o and ‘$@’ is foo.a. ‘$%’ is empty when the target is not an archive member.
 
-$<
+- $<
 The name of the first prerequisite. If the target got its recipe from an implicit rule, this will be the first prerequisite added by the implicit rule (see Implicit Rules).
 
-$?
+- $?
 The names of all the prerequisites that are newer than the target, with spaces between them. For prerequisites which are archive members, only the named member is used (see Archives).
 
-$^
+- $^
 The names of all the prerequisites, with spaces between them. For prerequisites which are archive members, only the named member is used (see Archives). A target has only one prerequisite on each other file it depends on, no matter how many times each file is listed as a prerequisite. So if you list a prerequisite more than once for a target, the value of $^ contains just one copy of the name. This list does not contain any of the order-only prerequisites; for those see the ‘$|’ variable, below.
 
-$+
+- $+
 This is like ‘$^’, but prerequisites listed more than once are duplicated in the order they were listed in the makefile. This is primarily useful for use in linking commands where it is meaningful to repeat library file names in a particular order.
 
-$|
+- $|
 The names of all the order-only prerequisites, with spaces between them.
 
-$*
+- $*
 The stem with which an implicit rule matches (see How Patterns Match). If the target is dir/a.foo.b and the target pattern is a.%.b then the stem is dir/foo. The stem is useful for constructing names of related files.
 
 
@@ -39,7 +38,6 @@ lib: foo.o bar.o lose.o win.o
         ar r lib $?
 
 Of the variables listed above, four have values that are single file names, and three have values that are lists of file names. These seven have variants that get just the file’s directory name or just the file name within the directory. The variant variables’ names are formed by appending ‘D’ or ‘F’, respectively. These variants are semi-obsolete in GNU make since the functions dir and notdir can be used to get a similar effect (see Functions for File Names). Note, however, that the ‘D’ variants all omit the trailing slash which always appears in the output of the dir function.
-```
 
 
 
