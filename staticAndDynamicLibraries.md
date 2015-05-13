@@ -1,5 +1,4 @@
-## Static and Dynamic Libraries
-## GCC and Make Compiling, Linking and Building C/C++ Applications
+## Static and Dynamic Libraries (GCC and Make Compiling, Linking and Building C/C++ Applications)
 
 - Static libraries (.a): Library of object code which is linked with, and becomes part of the application.
     - Static libraries are also known as static archive libraries and static linked shared libraries.
