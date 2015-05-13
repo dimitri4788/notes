@@ -1,4 +1,5 @@
 ## Static and Dynamic Libraries
+## GCC and Make Compiling, Linking and Building C/C++ Applications
 
 - Static libraries (.a): Library of object code which is linked with, and becomes part of the application.
     - Static libraries are also known as static archive libraries and static linked shared libraries.
@@ -8,6 +9,7 @@
     - Dynamic libraries are also known as dynamic shared libraries, shared objects, or dynamically linked libraries.
 
 ### Sources
+- https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html **
 - http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html
 - https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/OverviewOfDynamicLibraries.html
 - http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html
