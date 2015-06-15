@@ -137,7 +137,8 @@ constexpr int get_five() {return 5;}
 int some_value[get_five() + 7]; // Create an array of 12 integers. Legal C++11
 ```
 - Regular expressions
-    - Header name <regex>
+    - Header name "regex"
+    - http://www.informit.com/articles/article.aspx?p=2079020
 - Threading facilities
     - std::thread
     - std::mutex
