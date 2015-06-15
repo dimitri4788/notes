@@ -99,3 +99,4 @@ clean:
 - http://www.tutorialspoint.com/makefile/index.htm
 - http://www.cs.swarthmore.edu/~newhall/unixhelp/howto_makefiles.html
 - http://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables
+- https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html
