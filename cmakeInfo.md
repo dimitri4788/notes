@@ -8,8 +8,7 @@ cmake --help-module-list
 cmake --help-module FindGTest
 ```
 
-You can write new modules using: pkg-config
-Example command:
+You can write new modules using: pkg-config. Example command:
 ```sh
 pkg-config --libs /usr/local/Cellar/sqlite/3.8.8.3/lib/pkgconfig/sqlite3.pc
 ```
