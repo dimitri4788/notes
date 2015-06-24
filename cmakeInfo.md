@@ -1,6 +1,6 @@
 ## CMake helpful stuff
 
-CMake comes with numerous modules that aid in finding various well-known libraries and packages. You can get a listing of which modules your version of CMake supports by typing cmake --help-module-list, or by figuring out where your modules-path is and looking inside of it. On Ubuntu linux, for example, the module path is /usr/share/cmake/Modules/
+CMake comes with numerous modules that aid in finding various well-known libraries and packages. You can get a listing of which modules your version of CMake supports by typing cmake --help-module-list, or by figuring out where your modules-path is and looking inside of it. On Ubuntu linux, for example, the module path is /usr/local/Cellar/cmake/3.2.1/share/cmake/Modules
 
 Command-line:
 ```sh
