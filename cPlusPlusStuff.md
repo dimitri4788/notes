@@ -18,3 +18,4 @@ When you forward declare a type, all the compiler knows is that this type exists
 
 ### Sources
 - http://stackoverflow.com/questions/553682/when-can-i-use-a-forward-declaration
+- http://stackoverflow.com/questions/4757565/c-forward-declaration
