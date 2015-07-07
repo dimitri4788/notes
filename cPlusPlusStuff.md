@@ -9,7 +9,9 @@ When you forward declare a type, all the compiler knows is that this type exists
 
 http://www.cprogramming.com/c++11/rvalue-references-and-move-semantics-in-c++11.html
 
+**A Base Class pointer can point to a derived class object. Why is the vice-versa not true?**
 
+http://stackoverflow.com/questions/4937180/a-base-class-pointer-can-point-to-a-derived-class-object-why-is-the-vice-versa
 
 
 
