@@ -11,7 +11,8 @@ http://www.cprogramming.com/c++11/rvalue-references-and-move-semantics-in-c++11.
 
 **A Base Class pointer can point to a derived class object. Why is the vice-versa not true?**
 
-http://stackoverflow.com/questions/4937180/a-base-class-pointer-can-point-to-a-derived-class-object-why-is-the-vice-versa
+- http://stackoverflow.com/questions/4937180/a-base-class-pointer-can-point-to-a-derived-class-object-why-is-the-vice-versa
+- http://stackoverflow.com/questions/9752255/why-cant-a-derived-class-pointer-point-to-a-base-class-object-without-casting
 
 
 
