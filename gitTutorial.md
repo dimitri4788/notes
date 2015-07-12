@@ -22,7 +22,7 @@
     - Committed
 
 
-**Commands**
+###Commands
 
 init
 - Create an empty Git repository. The Git repository’s settings, stored information, and more is stored in a directory (a folder) named “.git”.
