@@ -184,20 +184,20 @@ Saved working directory and index state \
   "WIP on master: 049d078 added the index file"
   HEAD is now at 049d078 added the index file
   (To restore them type "git stash apply") 
-Now you can pull!
-  git pull
+#Now you can pull!
+$ git pull
   ...changes apply...
   Now check that everything is OK
-  $ git status
+$ git status
 # On branch master
   nothing to commit, working directory clean
   You can see what “hunks” you’ve stashed so far using git stash list. Since the “hunks” are stored in a Last-In-First-Out stack, our most recent change will be at top.
-  $ git stash list
+$ git stash list
   stash@{0}: WIP on master: 049d078 added the index file
   stash@{1}: WIP on master: c264051 Revert "added file_size"
   stash@{2}: WIP on master: 21d80a5 added number to log
   Now let’s apply our dirty changes back by popping them off the stack.
-  $ git stash pop
+$ git stash pop
 # On branch master
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
@@ -205,8 +205,7 @@ Now you can pull!
 #      modified:   index.html
 #      modified:   lib/simplegit.rb
 #
-  git stash apply does the same thing
-  Now you’re ready to get back to work on your stuff!
+# git stash apply does the same thing
 ```
 rebase
 ```sh
