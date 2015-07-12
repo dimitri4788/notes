@@ -189,7 +189,7 @@ $ git pull
   ...changes apply...
   Now check that everything is OK
 $ git status
-# On branch master
+  On branch master
   nothing to commit, working directory clean
   You can see what “hunks” you’ve stashed so far using git stash list. Since the “hunks” are stored in a Last-In-First-Out stack, our most recent change will be at top.
 $ git stash list
