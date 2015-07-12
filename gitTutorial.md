@@ -25,14 +25,81 @@
 **Commands**
 
 init
+```sh
+
+```
 config
+```sh
 
+```
+status
+```sh
 
+```
+add
+```sh
 
+```
+branch
+```sh
 
+```
+checkout
+```sh
 
+```
+clone
+```sh
 
+```
+commit
+```sh
 
+```
+diff
+```sh
+
+```
+grep
+```sh
+
+```
+log
+```sh
+
+```
+merge
+```sh
+
+```
+mv
+```sh
+
+```
+pull
+```sh
+
+```
+push
+```sh
+
+```
+stash
+```sh
+
+```
+rebase
+```sh
+
+```
+reset
+```sh
+
+```
+rm
+```sh
+
+```
 
 
 
