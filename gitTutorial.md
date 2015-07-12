@@ -23,10 +23,10 @@
 
 
 **Commands**
- init
-```sh
 
-```
+init
+config
+
 
 
 
