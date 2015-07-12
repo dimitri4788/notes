@@ -30,6 +30,7 @@ init
 $ git init
 ```
 config
+- To configure settings. Whether it be for the repository, the system itself, or global configurations.
 ```sh
 # Print & Set Some Basic Config Variables (Global)
 $ git config --global user.email
@@ -39,6 +40,7 @@ $ git config --global user.email "MyEmail@Zoho.com"
 $ git config --global user.name "My Name"
 ```
 status
+- To show differences between the index file (basically your working copy/repo) and the current HEAD commit.
 ```sh
 # Will display the branch, untracked files, changes and other differences
 $ git status
@@ -47,6 +49,7 @@ $ git status
 $ git help status
 ```
 add
+- To add files to the staging area/index. If you do not git add new files to the staging area/index, they will not be included in commits!
 ```sh
 # add a file in your current working directory
 $ git add HelloWorld.java
@@ -58,6 +61,7 @@ $ git add /path/to/file/HelloWorld.c
 $ git add ./*.java
 ```
 branch
+- Manage your branches. You can view, edit, create, delete branches using this command.
 ```sh
 # list existing branches & remotes
 $ git branch -a
@@ -76,6 +80,7 @@ $ git branch -m myBranchName myNewBranchName
 $ git branch myBranchName --edit-description
 ```
 checkout
+- Updates all files in the working tree to match the version in the index, or specified tree.
 ```sh
 # Checkout a repo - defaults to master branch
 $ git checkout
@@ -85,11 +90,13 @@ $ git checkout branchName
 $ git checkout -b newBranch
 ```
 clone
+- Clones, or copies, an existing repository into a new directory. It also adds remote-tracking branches for each branch in the cloned repo, which allows you to push to a remote branch.
 ```sh
 # Clone learnxinyminutes-docs
 $ git clone https://github.com/adambard/learnxinyminutes-docs.git
 ```
 commit
+- Stores the current contents of the index in a new “commit.” This commit contains the changes made and a message created by the user.
 ```sh
 # commit with a message
 $ git commit -m "Added multiplyNumbers() function to HelloWorld.c"
@@ -98,6 +105,7 @@ $ git commit -m "Added multiplyNumbers() function to HelloWorld.c"
 $ git commit -a -m "Modified foo.php and removed bar.php"
 ```
 diff
+- Shows differences between a file in the working directory, index and commits.
 ```sh
 # Show difference between your working dir and the index
 $ git diff
@@ -109,6 +117,7 @@ $ git diff --cached
 $ git diff HEAD
 ```
 grep
+- Allows you to quickly search a repository.
 ```sh
 # Thanks to Travis Jeffery for these
 # Set line numbers to be shown in grep search results
@@ -123,6 +132,7 @@ $ git grep 'variableName' -- '*.java'
 $ git grep -e 'arrayListName' --and \( -e add -e remove \) 
 ```
 log
+- Display commits to the repository.
 ```sh
 # Show all commits
 $ git log
@@ -134,6 +144,7 @@ $ git log -n 10
 $ git log --merges
 ```
 merge
+- “Merge” in changes from external commits into the current branch.
 ```sh
 # Merge the specified branch into the current.
 $ git merge branchName
@@ -142,6 +153,7 @@ $ git merge branchName
 $ git merge --no-ff branchName
 ```
 mv
+- Rename or move a file
 ```sh
 # Renaming a file
 $ git mv HelloWorld.c HelloNewWorld.c
@@ -154,6 +166,7 @@ $ git mv HelloWorld.c ./new/path/HelloWorld.c
 $ git mv -f myFile existingFile
 ```
 pull
+- Pulls from a repository and merges it with another branch.
 ```sh
 # Update your local repo, by merging in new changes
 # from the remote "origin" and "master" branch.
@@ -166,6 +179,7 @@ $ git pull origin master
 $ git pull origin master --rebase
 ```
 push
+- Push and merge changes from a branch to a remote & branch.
 ```sh
 # Push and merge changes from a local repo to a 
 # remote named "origin" and "master" branch.
@@ -179,6 +193,8 @@ $ git push -u origin master
 $ git push 
 ```
 stash
+- Stashing takes the dirty state of your working directory and saves it on a stack of unfinished changes that you can reapply at any time.
+- Let’s say you’ve been doing some work in your git repo, but you want to pull from the remote. Since you have dirty (uncommited) changes to some files, you are not able to run git pull. Instead, you can run git stash to save your changes onto a stack!
 ```sh
 $ git stash
 Saved working directory and index state \
@@ -209,12 +225,14 @@ $ git stash pop
 # git stash apply does the same thing
 ```
 rebase
+- Take all changes that were committed on one branch, and replay them onto another branch. Do not rebase commits that you have pushed to a public repo.
 ```sh
 # Rebase experimentBranch onto master
 # git rebase <basebranch> <topicbranch>
 $ git rebase master experimentBranch
 ```
 reset
+- Reset the current HEAD to the specified state. This allows you to undo merges, pulls, commits, adds, and more. It’s a great command but also dangerous if you don’t know what you are doing.
 ```sh
 # Reset the staging area, to match the latest commit (leaves dir unchanged)
 $ git reset
@@ -232,6 +250,7 @@ $ git reset 31f2bb1
 $ git reset --hard 31f2bb1
 ```
 rm
+- The opposite of git add, git rm removes files from the current working tree.
 ```sh
 # remove HelloWorld.c
 $ git rm HelloWorld.c
