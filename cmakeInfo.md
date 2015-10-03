@@ -13,6 +13,9 @@ You can write new modules using: pkg-config. Read the How_To_Find_Libraries link
 pkg-config --libs /usr/local/Cellar/sqlite/3.8.8.3/lib/pkgconfig/sqlite3.pc
 ```
 
+CMake Useful Variables:
+http://www.vtk.org/Wiki/CMake_Useful_Variables
+
 ### Sources
 - http://www.cmake.org/Wiki/CMake:How_To_Find_Libraries
 - http://people.freedesktop.org/~dbn/pkg-config-guide.html
