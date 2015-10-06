@@ -32,3 +32,8 @@ $ brew outdated
 <br>`$ brew home boost`
 - To see where all of the files are located, use the list [formula] --verbose
 <br>`brew list boost --verbose`
+
+Global Commands | Explanation
+--- | ---
+`$ brew update` | Update brew
+`$ brew list` | Lists the installed libraries
