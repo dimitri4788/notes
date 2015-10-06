@@ -1,7 +1,6 @@
-####Homebrew cheatsheet
+###Homebrew cheatsheet
 
-**If --dry-run or -n is passed, Homebrew will list all files which would be linked or which would be deleted by brew link --overwrite, but will not actually  link  or  delete any files.**
-
+- If --dry-run or -n is passed, Homebrew will list all files which would be linked or which would be deleted by brew link --overwrite, but will not actually  link  or  delete any files.
 - Global commands
 ```sh
 # Update brew
