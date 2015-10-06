@@ -11,3 +11,4 @@
 - String algorithms
 - String tokenizer
 - boost::algorithm
+- Boost's logging framework library: Boost.Log v2
