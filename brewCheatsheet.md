@@ -1,6 +1,6 @@
 ###Homebrew cheatsheet
 
-- If --dry-run or -n is passed, Homebrew will list all files which would be linked or which would be deleted by brew link --overwrite, but will not actually  link  or  delete any files.
+- If **--dry-run** or **-n** is passed, Homebrew will list all files which would be linked or which would be deleted by brew link --overwrite, but will not actually  link  or  delete any files.
 - Global commands
 ```sh
 # Update brew
@@ -11,24 +11,24 @@ $ brew list
 $ brew outdated
 ```
 - Install a package
-`$ brew install boost`
+<br>`$ brew install boost`
 - Upgrade a package
-`$ brew upgrade boost`
+<br>`$ brew upgrade boost`
 - Unlink
-`$ brew unlink boost`
+<br>`$ brew unlink boost`
 - Link
-`$ brew link boost`
+<br>`$ brew link boost`
 - Change versions
-`$ brew switch boost 1.56.0`
+<br>`$ brew switch boost 1.56.0`
 - See what versions you have
-`$ brew list --versions boost`
+<br>`$ brew list --versions boost`
 - List versions, caveats, etc
-`$ brew info git`
+<br>`$ brew info git`
 - Remove old versions
-`$ brew cleanup boost`
+<br>`$ brew cleanup boost`
 - Edit this formula
-`$ brew edit boost`
+<br>`$ brew edit boost`
 - Open homepage
-`$ brew home boost`
+<br>`$ brew home boost`
 - To see where all of the files are located, use the list [formula] --verbose
-`brew list boost --verbose`
+<br>`brew list boost --verbose`
