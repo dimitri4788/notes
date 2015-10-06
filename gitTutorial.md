@@ -88,6 +88,10 @@ $ git checkout
 $ git checkout branchName
 # Create a new branch & switch to it, like: "git branch <name>; git checkout <name>"
 $ git checkout -b newBranch
+# git checkout checks out (i.e., restores) an old version of a file.
+$ git checkout HEAD mars.txt
+# or using a unique commit ID
+$ git checkout f22b25e mars.txt
 ```
 clone
 - Clones, or copies, an existing repository into a new directory. It also adds remote-tracking branches for each branch in the cloned repo, which allows you to push to a remote branch.
@@ -115,6 +119,19 @@ $ git diff --cached
 
 # Show differences between your working dir and the most recent commit
 $ git diff HEAD
+
+# Show the difference between the last committed change and what’s in the staging area
+$ git diff --staged
+
+# To see what we changed at different steps, we can use git diff with the notation HEAD~1, HEAD~2, and so on, to refer to old commits
+# The most recent end of the chain is referred to as HEAD; we can refer to previous commits using the ~ notation, so HEAD~1 (pronounced “head minus one”) means “the previous commit”,
+#   while HEAD~123 goes back 123 commits from where we are now
+$ git diff HEAD~1 mars.txt
+$ git diff HEAD~2 mars.txt
+
+# Doing diff using unique IDs
+$ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
+$ git diff f22b25e mars.txt
 ```
 grep
 - Allows you to quickly search a repository.
@@ -257,6 +274,17 @@ $ git rm HelloWorld.c
 
 # Remove a file from a nested dir
 $ git rm /pather/to/the/file/HelloWorld.c
+```
+
+###Extra notes
+- Use "bare double dash" (--) to separate options from a list of arguments. For example, here if we have both a file and a tag named main.c, then we will get different results
+```sh
+$ git checkout main.c
+$ git checkout -- main.c
+```
+- To configure Git to open your favorite editor during `git commit`, set this environment variable
+```sh
+$ export GIT_EDITOR=vim
 ```
 
 
