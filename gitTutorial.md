@@ -254,6 +254,9 @@ reset
 # Reset the staging area, to match the latest commit (leaves dir unchanged)
 $ git reset
 
+# Reset the staging area for the file, i.e. to remove the file from the staging area
+$ git reset <pathToFile>
+
 # Reset the staging area, to match the latest commit, and overwrite working dir
 $ git reset --hard
 
