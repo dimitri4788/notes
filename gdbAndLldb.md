@@ -1,14 +1,26 @@
 ###GDB and LLDB Tutorial
 
+#####GDB
+Commands | Explanation
+--- | ---
+`$ gdb` | Start GDB
+`$ gdb *program*` | Start GDB with executable program
+`$ gdb *program* *coreFile*` | Start with both an executable program and a core file
+`$ gdb *program* *1234*` | You can, instead, specify a process ID as a second argument, if you want to debug a running process
 
 
 
 
+
+
+
+
+#####LLDB
 
 #####Debugging a core file
 - Make sure your system will generate core files
 ```sh
-#As core files can be huge, may systems disable the generation of core
+#As core files can be huge, many systems disable the generation of core
 #   files by default and you may need to turn them on. First take a look at your current settings:
 $ ulimit -a
 
@@ -28,3 +40,9 @@ virtual memory        (kbytes, -v) unlimited
 #   files will not be generated. You need to change this setting to "unlimited" as follows:
 $ ulimit -c unlimited
 ```
+
+
+###Sources
+- http://lldb.llvm.org/lldb-gdb.html
+- http://processors.wiki.ti.com/index.php/Multithreaded_Debugging_Made_Easier_by_Forcing_Core_Dumps
+- http://lldb.llvm.org/tutorial.html
