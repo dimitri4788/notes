@@ -4,9 +4,9 @@
 Commands | Explanation
 --- | ---
 `$ gdb` | Start GDB
-`$ gdb *program*` | Start GDB with executable program
-`$ gdb *program* *coreFile*` | Start with both an executable program and a core file
-`$ gdb *program* *1234*` | You can, instead, specify a process ID as a second argument, if you want to debug a running process
+`$ gdb program` | Start GDB with executable program
+`$ gdb program coreFile` | Start with both an executable program and a core file
+`$ gdb program 1234` | You can, instead, specify a process ID as a second argument, if you want to debug a running process
 
 
 
