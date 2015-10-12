@@ -1,11 +1,11 @@
-####GDB and LLDB Tutorial
+###GDB and LLDB Tutorial
 
 
 
 
 
 
-Debugging a core file:
+#####Debugging a core file
 - Make sure your system will generate core files
 ```sh
 #As core files can be huge, may systems disable the generation of core
