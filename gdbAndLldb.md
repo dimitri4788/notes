@@ -1,12 +1,27 @@
 ###GDB and LLDB Tutorial
 
+NOTE: You can use gdb to debug programs written in C and C++. For more information, see Supported Languages: https://sourceware.org/gdb/current/onlinedocs/gdb/Supported-Languages.html#Supported-Languages
+
+<br>
+
 #####GDB
-Commands | Explanation
+Shell Commands | Explanation
 --- | ---
 `$ gdb` | Start GDB
 `$ gdb program` | Start GDB with executable program
 `$ gdb program coreFile` | Start with both an executable program and a core file
 `$ gdb program 1234` | You can, instead, specify a process ID as a second argument, if you want to debug a running process
+`$ gdb -help` | To display all available options and briefly describe their use (‘gdb -h’ is a shorter equivalent).
+
+<br>
+
+GDB Session Commands | Explanation
+--- | ---
+`(gdb) q + ENTER` | To quit GDB
+`(gdb) quit + ENTER` | To quit GDB
+`(gdb) An interrupt (often Ctrl-c) ` | Does not exit from gdb, but rather terminates the action of any gdb command that is in progress and returns to gdb command level.
+
+
 
 
 
@@ -43,6 +58,7 @@ $ ulimit -c unlimited
 
 
 ###Sources
+- https://sourceware.org/gdb/current/onlinedocs/gdb/
 - http://lldb.llvm.org/lldb-gdb.html
 - http://processors.wiki.ti.com/index.php/Multithreaded_Debugging_Made_Easier_by_Forcing_Core_Dumps
 - http://lldb.llvm.org/tutorial.html
