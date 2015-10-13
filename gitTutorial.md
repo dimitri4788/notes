@@ -146,7 +146,7 @@ $ git config --global alias.g "grep --break --heading --line-number"
 $ git grep 'variableName' -- '*.java'
 
 # Search for a line that contains "arrayListName" and, "add" or "remove"
-$ git grep -e 'arrayListName' --and \( -e add -e remove \) 
+$ git grep -e 'arrayListName' --and \( -e add -e remove \)
 ```
 log
 - Display commits to the repository.
@@ -159,6 +159,10 @@ $ git log -n 10
 
 # Show merge commits only
 $ git log --merges
+
+# Print commit history in a pretty format
+$ git log --pretty=format:"%h - %an : %s"
+$ git log --pretty=format:"%h - %an, %ar : %s"
 ```
 merge
 - “Merge” in changes from external commits into the current branch.
@@ -198,7 +202,7 @@ $ git pull origin master --rebase
 push
 - Push and merge changes from a branch to a remote & branch.
 ```sh
-# Push and merge changes from a local repo to a 
+# Push and merge changes from a local repo to a
 # remote named "origin" and "master" branch.
 # git push <remote> <branch>
 # git push => implicitly defaults to => git push origin master
@@ -207,7 +211,7 @@ $ git push origin master
 # To link up current local branch with a remote branch, add -u flag:
 $ git push -u origin master
 # Now, anytime you want to push from that same local branch, use shortcut:
-$ git push 
+$ git push
 ```
 stash
 - Stashing takes the dirty state of your working directory and saves it on a stack of unfinished changes that you can reapply at any time.
@@ -217,7 +221,7 @@ $ git stash
 Saved working directory and index state \
   "WIP on master: 049d078 added the index file"
   HEAD is now at 049d078 added the index file
-  (To restore them type "git stash apply") 
+  (To restore them type "git stash apply")
 #Now you can pull!
 $ git pull
   ...changes apply...
@@ -268,6 +272,9 @@ $ git reset 31f2bb1
 # and makes the working dir match (deletes uncommited changes and all commits
 # after the specified commit).
 $ git reset --hard 31f2bb1
+
+# To unstage the staged file
+$ git reset HEAD file.cpp
 ```
 rm
 - The opposite of git add, git rm removes files from the current working tree.
@@ -277,6 +284,45 @@ $ git rm HelloWorld.c
 
 # Remove a file from a nested dir
 $ git rm /pather/to/the/file/HelloWorld.c
+
+# Remove a file from staging area but keep the file in your working tree. In other words, you may want to keep the file on your hard drive but not have Git track it anymore.
+#   This is particularly useful if you forgot to add something to your .gitignore file and accidentally staged it, like a large log file.
+$ git rm --cached HelloWorld.c
+```
+remote
+- To see which remote servers you have configured
+```sh
+# To see which remote servers you have configured. It lists the shortnames of each remote handle you’ve specified.
+$ git remote
+origin
+
+# Shows you the URLs that Git has stored for the shortname to be used when reading and writing to that remote
+$ git remote -v
+origin ssh://git@stash.wolfram.com:7999/dl/licensing-server.git (fetch)
+origin ssh://git@stash.wolfram.com:7999/dl/licensing-server.git (push)
+
+# Adding Remote Repositories
+$ git remote add sniff ssh://git@stash.wolfram.com:7999/dl/sniffer.git
+origin ssh://git@stash.wolfram.com:7999/dl/licensing-server.git (fetch)
+origin ssh://git@stash.wolfram.com:7999/dl/licensing-server.git (push)
+sniff ssh://git@stash.wolfram.com:7999/dl/sniffer.git (fetch)
+sniff ssh://git@stash.wolfram.com:7999/dl/sniffer.git (push)
+
+# Now you can use the string sniff in lieu of the whole URL to do pull/push etc.
+$ git pull sniff master
+
+# If you want to see more information about a particular remote
+$ git remote show origin
+
+# Removing and Renaming Remotes
+$ git remote rename sniff sniffer
+$ git remote
+origin
+sniffer
+
+$ git remote rm sniffer
+$ git remote
+origin
 ```
 
 ###Extra notes
