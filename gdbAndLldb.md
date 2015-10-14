@@ -1,10 +1,10 @@
 ###GDB and LLDB Tutorial
 
-NOTE: You can use gdb to debug programs written in C and C++. For more information, see Supported Languages: https://sourceware.org/gdb/current/onlinedocs/gdb/Supported-Languages.html#Supported-Languages
+NOTE: You can use gdb to debug programs written in C and C++. For more information, see supported languages: https://sourceware.org/gdb/current/onlinedocs/gdb/Supported-Languages.html#Supported-Languages
 
 <br>
 
-#####GDB
+####GDB
 Shell Commands | Explanation
 --- | ---
 `$ gdb` | Start GDB
@@ -21,10 +21,7 @@ GDB Session Commands | Explanation
 `(gdb) An interrupt (often Ctrl-c) ` | Does not exit from gdb, but rather terminates the action of any gdb command that is in progress and returns to gdb command level.
 
 
-
-<br>
-
-#####LLDB
+####LLDB
 - http://lldb.llvm.org/lldb-gdb.html
 
 <br>
