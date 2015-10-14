@@ -13,7 +13,6 @@ Shell Commands | Explanation
 `$ gdb program 1234` | You can, instead, specify a process ID as a second argument, if you want to debug a running process
 `$ gdb -help` | To display all available options and briefly describe their use (‘gdb -h’ is a shorter equivalent).
 
-<br>
 
 GDB Session Commands | Explanation
 --- | ---
@@ -23,14 +22,13 @@ GDB Session Commands | Explanation
 
 
 
-
-
-
-
-
-
+<br>
 
 #####LLDB
+- http://lldb.llvm.org/lldb-gdb.html
+
+<br>
+<br>
 
 #####Debugging a core file
 - Make sure your system will generate core files
