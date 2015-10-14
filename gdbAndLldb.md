@@ -20,7 +20,6 @@ GDB Session Commands | Explanation
 `(gdb) quit + ENTER` | To quit GDB
 `(gdb) An interrupt (often Ctrl-c) ` | Does not exit from gdb, but rather terminates the action of any gdb command that is in progress and returns to gdb command level.
 
-
 ####LLDB
 - http://lldb.llvm.org/lldb-gdb.html
 
