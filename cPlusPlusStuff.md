@@ -14,7 +14,8 @@
 **Smart Pointers**
 - http://herbsutter.com/2013/05/29/gotw-89-solution-smart-pointers/
 
-
+**Temporary Objects**
+- http://herbsutter.com/2013/05/13/gotw-2-solution-temporary-objects/
 
 
 
