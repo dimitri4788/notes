@@ -1,6 +1,8 @@
-## Makefile tutorial
+Makefile tutorial
+=================
 
-### Table of automatic variables:
+Table of automatic variables:
+----------------------------
 - $@
     - The file name of the target of the rule. If the target is an archive member, then ‘$@’ is the name of the archive file. In a pattern rule that has multiple targets (see Introduction to Pattern Rules), ‘$@’ is the name of whichever target caused the rule’s recipe to be run.
 
@@ -28,7 +30,8 @@
     - In an explicit rule, there is no stem; so ‘$*’ cannot be determined in that way. Instead, if the target name ends with a recognized suffix (see Old-Fashioned Suffix Rules), ‘$*’ is set to the target name minus the suffix. For example, if the target name is ‘foo.c’, then ‘$*’ is set to ‘foo’, since ‘.c’ is a suffix. GNU make does this bizarre thing only for compatibility with other implementations of make. You should generally avoid using ‘$*’ except in implicit rules or static pattern rules.
     - If the target name in an explicit rule does not end with a recognized suffix, ‘$*’ is set to the empty string for that rule.
 
-#### Note:
+Note:
+----
 - ‘$?’ is useful even in explicit rules when you wish to operate on only the prerequisites that have changed. For example, suppose that an archive named lib is supposed to contain copies of several object files. This rule copies just the changed object files into the archive:
 ```
 lib: foo.o bar.o lose.o win.o
@@ -38,7 +41,8 @@ lib: foo.o bar.o lose.o win.o
 
 
 
-### Example:
+Example:
+-------
 ```
 # 'make'        build executable file 'mycc'
 # 'make clean'  removes all .o and executable files
@@ -95,7 +99,8 @@ clean:
         $(RM) *.o *~ $(MAIN)
 ```
 
-### Sources
+Sources
+-------
 - http://www.tutorialspoint.com/makefile/index.htm
 - http://www.cs.swarthmore.edu/~newhall/unixhelp/howto_makefiles.html
 - http://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables

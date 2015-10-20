@@ -1,6 +1,8 @@
-## Test Doubles (for unit testing)
+Test Doubles (for unit testing)
+===============================
 
-###Test Double
+Test Double
+-----------
 In automated unit-testing, if the software consists of a complex set of objects or procedures interacting together to create the final result, it may be necessary to use objects or procedures that look and behave like their release-intended counterparts, but are actually simplified versions that reduce the complexity and facilitate testing. A test double is a generic term used for these objects or procedures.
 
 - Types of test doubles
@@ -34,7 +36,8 @@ In automated unit-testing, if the software consists of a complex set of objects 
 - They are passed around but never actually used. Usually they are just used to fill parameter lists.
 
 
-### Sources
+Sources
+-------
 - http://martinfowler.com/articles/mocksArentStubs.html
 - https://en.wikipedia.org/wiki/Test_double
 - http://www.webopedia.com/TERM/S/stub.html

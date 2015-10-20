@@ -1,4 +1,5 @@
-###Homebrew cheatsheet
+Homebrew cheatsheet
+===================
 
 NOTE: If **--dry-run** or **-n** is passed, Homebrew will list all files which would be linked or which would be deleted by brew link --overwrite, but will not actually  link  or  delete any files.
 
@@ -37,6 +38,7 @@ Global Commands | Explanation
 
 
 
-### Sources
+Sources
+-------
 - http://blog.shvetsov.com/2014/11/homebrew-cheat-sheet-and-workflow.html
 - https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/FAQ.md

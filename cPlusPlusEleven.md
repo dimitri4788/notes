@@ -1,6 +1,8 @@
-## C++11 and C++14 stuff
+C++11 and C++14 stuff
+=====================
 
-### C++11
+C++11
+-----
 - auto
 ```cpp
 // C++98
@@ -231,7 +233,8 @@ int main()
 
 
 
-### C++14
+C++14
+-----
 - auto
     - Return type deduction for functions
 ```cpp
@@ -284,7 +287,8 @@ string s = get<string>(t);  // Compile-time error due to ambiguity
 
 
 
-### Sources
+Sources
+-------
 - http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer#lambdas
 - http://blog.smartbear.com/c-plus-plus/the-biggest-changes-in-c11-and-why-you-should-care/
 - http://en.wikipedia.org/wiki/C%2B%2B11#Tuple_types

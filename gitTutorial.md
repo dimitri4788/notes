@@ -1,4 +1,5 @@
-## Git stuff
+Git stuff
+=========
 
 - Git is a distributed version control and source code management system.
 - It does this through a series of snapshots of your project, and it works with those snapshots to provide you with functionality to version and manage your source code.
@@ -22,7 +23,8 @@
     - Committed
 
 
-###Commands
+Commands
+--------
 
 init
 - Create an empty Git repository. The Git repository’s settings, stored information, and more is stored in a directory (a folder) named “.git”.
@@ -325,7 +327,8 @@ $ git remote
 origin
 ```
 
-###Extra notes
+Extra notes
+-----------
 - Use "bare double dash" (--) to separate options from a list of arguments. For example, here if we have both a file and a tag named main.c, then we will get different results
 ```sh
 $ git checkout main.c
@@ -341,5 +344,6 @@ $ export GIT_EDITOR=vim
 
 
 
-### Sources
+Sources
+-------
 - http://learnxinyminutes.com/docs/git/
