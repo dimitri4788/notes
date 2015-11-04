@@ -94,6 +94,11 @@ $ git checkout -b newBranch
 $ git checkout HEAD mars.txt
 # or using a unique commit ID
 $ git checkout f22b25e mars.txt
+
+# If you want to take a quick peek at an upstream branch, you can check it out directly
+$ git checkout origin/<branchName>
+# But if you want to work on that branch, you'll need to create a local tracking branch
+$ git checkout -b <branchName> origin/<branchName>
 ```
 clone
 - Clones, or copies, an existing repository into a new directory. It also adds remote-tracking branches for each branch in the cloned repo, which allows you to push to a remote branch.

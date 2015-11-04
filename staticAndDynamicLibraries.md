@@ -8,6 +8,12 @@ Static and Dynamic Libraries (GCC and Make Compiling, Linking and Building C/C++
     - Dynamically loaded/unloaded and linked during execution (i.e. browser plug-in) using the dynamic linking loader system functions.
     - Dynamic libraries are also known as dynamic shared libraries, shared objects, or dynamically linked libraries.
 
+<br>
+
+Library order in static linking
+-------------------------------
+- http://eli.thegreenplace.net/2013/07/09/library-order-in-static-linking
+
 Sources
 -------
 - https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html **
