@@ -1,1 +1,2 @@
 add_executable(functionPointers functionPointers.c)
+add_executable(functionPointersAdvanced functionPointersAdvanced.c)
