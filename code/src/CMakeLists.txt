@@ -1,2 +1,3 @@
+add_executable(coolStuffInC coolStuffInC.c)
 add_executable(functionPointers functionPointers.c)
 add_executable(functionPointersAdvanced functionPointersAdvanced.c)
