@@ -15,6 +15,7 @@ To run
 ```sh
 $ cd bin
 $ ./<executableFile>
+```
 
 Author
 ------
