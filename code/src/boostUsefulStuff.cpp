@@ -88,7 +88,7 @@ int main(int argc, char **argv)
 
     //boost::algorithm (split string and eliminate/ignore spaces in words)
     std::cout << "Boost's boost::algorithm (split string with unwanted spaces)" << std::endl;
-    std::cout << "-------------------------------------------------------------" << std::endl;
+    std::cout << "------------------------------------------------------------" << std::endl;
     lineToSplit = "test1          test2  test3                              test4";
     std::cout << "lineToSplit: " << lineToSplit << std::endl;
     //boost::split(tokens, lineToSplit, boost::is_any_of("-"));
