@@ -1,8 +1,8 @@
 Best practices for writing Python code
 ======================================
 
-Good/Bad practices
-------------------
+Best practices
+--------------
 - `from modu import *`: This is generally considered bad practice.
     - Using `from modu import func` is a way to pinpoint the function you want to import and put it in the global namespace.
     - Very bad: `from modu import *`
@@ -36,8 +36,42 @@ print "".join(nums)  # much more efficient
 # create a concatenated string from 0 to 19 (e.g. "012..1819")
 nums = [str(n) for n in range(20)]
 print "".join(nums)
+
+#You can also use the % formatting operator to concatenate a pre-determined number of strings besides str.join() and +.
+foo = 'foo'
+bar = 'bar'
+foobar = '%s%s' % (foo, bar) # It is OK
+foobar = '{0}{1}'.format(foo, bar) # It is better
+foobar = '{foo}{bar}'.format(foo=foo, bar=bar) # It is best
+
+#Using join() is not always best. In the instances where you are creating a new string from a pre-determined number of strings, using the addition operator is actually faster, but in cases like above or in cases where you are adding to an existing string, using join() should be your preferred method.
+foo = 'foo'
+bar = 'bar'
+foobar = foo + bar  # This is good
+foo += 'ooo'  # This is bad, instead you should do:
+foo = ''.join([foo, 'ooo'])
 ```
-- 
+- Explicit code
+```python
+#Bad
+def make_complex(*args):
+    x, y = args
+    return dict(**locals())
+
+#Good
+def make_complex(x, y):
+    return {'x': x, 'y': y}
+```
+- PEP 8
+    - PEP 8 is the de-facto code style guide for Python.
+    - `pip install pep8`
+    - `pep8 fileName.py`
+- autopep8
+    - The program autopep8 can be used to automatically reformat code (in-place) in the PEP 8 style. Install the program with:
+    - `pip install autopep8`
+    - `autopep8 --in-place fileName.py`
+    - Excluding the `--in-place` flag will cause the program to output the modified code directly to the console for review.
+    - The `--aggressive` flag will perform more substantial changes and can be applied multiple times for greater effect.
 
 
 
@@ -49,8 +83,14 @@ print "".join(nums)
 
 
 
-Useful Information
-------------------
+
+
+
+
+
+
+Useful Stuff
+------------
 - The `import modu` statement will look for the file modu.py in the same directory as the caller if it exists.
     - If it is not found, the Python interpreter will search for modu.py in the "path" recursively and raise an ImportError exception if it is not found.
     - Once modu.py is found, the Python interpreter will execute the module in an isolated scope.
@@ -68,6 +108,19 @@ Useful Information
         x = 6
         x = x + 1  # The new x is another object
         ```
+- Create an ignored variable
+    - If you need to assign something (for instance, in Unpacking) but will not need that variable, use __:
+    ```python
+    filename = 'foobar.txt'
+    basename, __, ext = filename.rpartition('.')
+    ```
+- Create a length-N list of the same thing: `four_nones = [None] * 4`
+- Create a length-N list of lists: `four_lists = [[] for __ in xrange(4)]`
+- Create a string from a list:
+```python
+letters = ['s', 'p', 'a', 'm']
+word = ''.join(letters)
+```
 
 
 
@@ -76,6 +129,11 @@ Useful Information
 
 
 
+
+
+
+
+<br>
 
 Source
 ------
