@@ -68,10 +68,122 @@ def make_complex(x, y):
     - `pep8 fileName.py`
 - autopep8
     - The program autopep8 can be used to automatically reformat code (in-place) in the PEP 8 style. Install the program with:
-    - `pip install autopep8`
-    - `autopep8 --in-place fileName.py`
-    - Excluding the `--in-place` flag will cause the program to output the modified code directly to the console for review.
-    - The `--aggressive` flag will perform more substantial changes and can be applied multiple times for greater effect.
+        - `pip install autopep8`
+        - `autopep8 --in-place fileName.py`
+    - Excluding the `--in-place` flag will cause the program to output the modified code directly to the console for review
+    - The `--aggressive` flag will perform more substantial changes and can be applied multiple times for greater effect
+- Check if variable equals a constant
+    - You don’t need to explicitly compare a value to True, or None, or 0 - you can just add it to the if statement. See Truth Value Testing for a list of what is considered false.
+    - Truth Value Testing:
+        - The following values are considered false: None, False, 0, 0L, 0.0, 0j, '', (), [], {}, instances of user-defined classes if the class defines a __nonzero__() or __len__() method, when that method returns the integer zero or bool value False
+        - All other values are considered true — so objects of many types are always true
+    ```python
+    #Bad
+    if attr == True:
+        print 'True!'
+
+    if attr == None:
+        print 'attr is None!'
+
+    #Good
+    # Just check the value
+    if attr:
+        print 'attr is truthy!'
+
+    # or check for the opposite
+    if not attr:
+        print 'attr is falsey!'
+
+    # or, since None is considered false, explicitly check for it
+    if attr is None:
+        print 'attr is None!'
+    ```
+- Access a Dictionary Element
+    - Don’t use the dict.has_key() method. Instead, use x in d syntax, or pass a default argument to dict.get().
+    ```python
+    #Bad
+    d = {'hello': 'world'}
+    if d.has_key('hello'):
+        print d['hello']    # prints 'world'
+    else:
+        print 'default_value'
+
+    #Good
+    d = {'hello': 'world'}
+
+    print d.get('hello', 'default_value') # prints 'world'
+    print d.get('thingy', 'default_value') # prints 'default_value'
+
+    # Or:
+    if 'hello' in d:
+        print d['hello']
+    ```
+- Short Ways to Manipulate Lists
+```python
+#Bad:
+# Filter elements greater than 4
+a = [3, 4, 5]
+b = []
+for i in a:
+if i > 4:
+b.append(i)
+
+#Good:
+a = [3, 4, 5]
+b = [i for i in a if i > 4]
+# Or:
+b = filter(lambda x: x > 4, a)
+
+#Bad:
+# Add three to all list members.
+a = [3, 4, 5]
+for i in range(len(a)):
+a[i] += 3
+
+#Good:
+a = [3, 4, 5]
+a = [i + 3 for i in a]
+# Or:
+a = map(lambda i: i + 3, a)
+
+#Use enumerate() keep a count of your place in the list
+a = [3, 4, 5]
+for i, item in enumerate(a):
+    print i, item
+```
+- Read from a file
+    - Use the with open syntax to read from files. This will automatically close files for you.
+    ```python
+    #Bad:
+    f = open('file.txt')
+    a = f.read()
+    print a
+    f.close()
+
+    #Good:
+    with open('file.txt') as f:
+    for line in f:
+    print line
+    ```
+    - The with statement is better because it will ensure you always close the file, even if an exception is raised inside the with block.
+- Line Continuations
+```python
+#Bad:
+my_very_big_string = """For a long time I used to go to bed early. Sometimes, \
+    when I had put out my candle, my eyes would close so quickly that I had not even \
+    time to say “I’m going to sleep.”"""
+
+from some.deep.module.inside.a.module import a_nice_function, another_nice_function, yet_another_nice_function
+
+#Good:
+my_very_big_string = (
+    "For a long time I used to go to bed early. Sometimes, "
+    "when I had put out my candle, my eyes would close so quickly "
+    "that I had not even time to say “I’m going to sleep.”"
+)
+
+from some.deep.module.inside.a.module import (a_nice_function, another_nice_function, yet_another_nice_function)
+```
 
 
 
@@ -88,6 +200,9 @@ def make_complex(x, y):
 
 
 
+
+
+<br>
 
 Useful Stuff
 ------------
