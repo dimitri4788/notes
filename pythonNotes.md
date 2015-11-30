@@ -67,14 +67,14 @@ def make_complex(x, y):
     - `pip install pep8`
     - `pep8 fileName.py`
 - autopep8
-    - The program autopep8 can be used to automatically reformat code (in-place) in the PEP 8 style. Install the program with:
+    - The program autopep8 can be used to automatically reformat code (in-place) in the PEP 8 style. Install the program with
         - `pip install autopep8`
         - `autopep8 --in-place fileName.py`
     - Excluding the `--in-place` flag will cause the program to output the modified code directly to the console for review
     - The `--aggressive` flag will perform more substantial changes and can be applied multiple times for greater effect
 - Check if variable equals a constant
     - You don’t need to explicitly compare a value to True, or None, or 0 - you can just add it to the if statement. See Truth Value Testing for a list of what is considered false.
-    - Truth Value Testing:
+    - Truth Value Testing
         - The following values are considered false: None, False, 0, 0L, 0.0, 0j, '', (), [], {}, instances of user-defined classes if the class defines a __nonzero__() or __len__() method, when that method returns the integer zero or bool value False
         - All other values are considered true — so objects of many types are always true
     ```python
@@ -120,7 +120,7 @@ def make_complex(x, y):
     ```
 - Short Ways to Manipulate Lists
 ```python
-#Bad:
+#Bad
 # Filter elements greater than 4
 a = [3, 4, 5]
 b = []
@@ -128,22 +128,22 @@ for i in a:
 if i > 4:
 b.append(i)
 
-#Good:
+#Good
 a = [3, 4, 5]
 b = [i for i in a if i > 4]
 # Or:
 b = filter(lambda x: x > 4, a)
 
-#Bad:
+#Bad
 # Add three to all list members.
 a = [3, 4, 5]
 for i in range(len(a)):
 a[i] += 3
 
-#Good:
+#Good
 a = [3, 4, 5]
 a = [i + 3 for i in a]
-# Or:
+# Or
 a = map(lambda i: i + 3, a)
 
 #Use enumerate() keep a count of your place in the list
@@ -154,13 +154,13 @@ for i, item in enumerate(a):
 - Read from a file
     - Use the with open syntax to read from files. This will automatically close files for you.
     ```python
-    #Bad:
+    #Bad
     f = open('file.txt')
     a = f.read()
     print a
     f.close()
 
-    #Good:
+    #Good
     with open('file.txt') as f:
     for line in f:
     print line
@@ -168,14 +168,14 @@ for i, item in enumerate(a):
     - The with statement is better because it will ensure you always close the file, even if an exception is raised inside the with block.
 - Line Continuations
 ```python
-#Bad:
+#Bad
 my_very_big_string = """For a long time I used to go to bed early. Sometimes, \
     when I had put out my candle, my eyes would close so quickly that I had not even \
     time to say “I’m going to sleep.”"""
 
 from some.deep.module.inside.a.module import a_nice_function, another_nice_function, yet_another_nice_function
 
-#Good:
+#Good
 my_very_big_string = (
     "For a long time I used to go to bed early. Sometimes, "
     "when I had put out my candle, my eyes would close so quickly "
@@ -184,18 +184,18 @@ my_very_big_string = (
 
 from some.deep.module.inside.a.module import (a_nice_function, another_nice_function, yet_another_nice_function)
 ```
-
-
-
-
-
-
-
-
-
-
-
-
+- Installation instructions are often reduced to one command: `pip install <module>` or `python setup.py install`
+- Documenting Code (Comments)
+    - Do not use triple-quote strings to comment code
+        - This is not a good practice, because line-oriented command-line tools such as grep will not be aware that the commented code is inactive.
+        - It is better to add hashes at the proper indentation level for every commented line.
+    - Block Comments
+        - Block comments generally apply to some (or all) code that follows them, and are indented to the same level as that code.
+        - Each line of a block comment starts with a # and a single space (unless it is indented text inside the comment).
+        - Paragraphs inside a block comment are separated by a line containing a single # .
+    - Inline Comments
+        - An inline comment is a comment on the same line as a statement.
+        - Inline comments should be separated by at least two spaces from the statement. They should start with a # and a single space.
 
 
 
@@ -224,29 +224,18 @@ Useful Stuff
         x = x + 1  # The new x is another object
         ```
 - Create an ignored variable
-    - If you need to assign something (for instance, in Unpacking) but will not need that variable, use __:
+    - If you need to assign something (for instance, in Unpacking) but will not need that variable, use __
     ```python
     filename = 'foobar.txt'
     basename, __, ext = filename.rpartition('.')
     ```
 - Create a length-N list of the same thing: `four_nones = [None] * 4`
 - Create a length-N list of lists: `four_lists = [[] for __ in xrange(4)]`
-- Create a string from a list:
+- Create a string from a list
 ```python
 letters = ['s', 'p', 'a', 'm']
 word = ''.join(letters)
 ```
-
-
-
-
-
-
-
-
-
-
-
 
 <br>
 
