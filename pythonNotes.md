@@ -236,6 +236,7 @@ Useful Stuff
 letters = ['s', 'p', 'a', 'm']
 word = ''.join(letters)
 ```
+- Why Python is Slow: Looking Under the Hood: https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/
 
 <br>
 
