@@ -11,7 +11,7 @@ Best practices
         - `x = sqrt(4)` #sqrt may be part of modu, if not redefined in between
     - Best: `import modu`
         - `x = modu.sqrt(4)` #sqrt is visibly part of modu's namespace
-- Any directory with an __init__.py file is considered a Python package.
+- Any directory with an _ _ init__.py file is considered a Python package.
     - Different modules in the package are imported in a similar manner as plain modules, but with a special behavior for the __init__.py file, which is used to gather all package-wide definitions.
     - A file modu.py in the directory pack/ is imported with the statement `import pack.modu`. This statement will look for an __init__.py file in pack, execute all of its top-level statements. Then it will look for a file named pack/modu.py and execute all of its top-level statements. After these operations, any variable, function, or class defined in modu.py is available in the pack.modu namespace.
     - Leaving an __init__.py file empty is considered normal and even a good practice, if the package’s modules and sub-packages do not need to share any code.
