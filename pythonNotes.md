@@ -11,10 +11,10 @@ Best practices
         - `x = sqrt(4)` #sqrt may be part of modu, if not redefined in between
     - Best: `import modu`
         - `x = modu.sqrt(4)` #sqrt is visibly part of modu's namespace
-- Any directory with an _ _ init__.py file is considered a Python package.
-    - Different modules in the package are imported in a similar manner as plain modules, but with a special behavior for the __init__.py file, which is used to gather all package-wide definitions.
-    - A file modu.py in the directory pack/ is imported with the statement `import pack.modu`. This statement will look for an __init__.py file in pack, execute all of its top-level statements. Then it will look for a file named pack/modu.py and execute all of its top-level statements. After these operations, any variable, function, or class defined in modu.py is available in the pack.modu namespace.
-    - Leaving an __init__.py file empty is considered normal and even a good practice, if the package’s modules and sub-packages do not need to share any code.
+- Any directory with an \_\_init\_\_.py file is considered a Python package.
+    - Different modules in the package are imported in a similar manner as plain modules, but with a special behavior for the \_\_init\_\_.py file, which is used to gather all package-wide definitions.
+    - A file modu.py in the directory pack/ is imported with the statement `import pack.modu`. This statement will look for an \_\_init\_\_.py file in pack, execute all of its top-level statements. Then it will look for a file named pack/modu.py and execute all of its top-level statements. After these operations, any variable, function, or class defined in modu.py is available in the pack.modu namespace.
+    - Leaving an \_\_init\_\_.py file empty is considered normal and even a good practice, if the package’s modules and sub-packages do not need to share any code.
     - Importing deeply nested packages: import very.deep.module as mod. This allows you to use mod in place of the verbose repetition of very.deep.module.
 - One peculiarity of Python that can surprise beginners is that strings are immutable. This means that when constructing a string from its parts, it is much more efficient to accumulate the parts in a list, which is mutable, and then glue ('join') the parts together when the full string is needed. One thing to notice, however, is that list comprehensions are better and faster than constructing a list in a loop with calls to append().
 ```python
@@ -75,7 +75,7 @@ def make_complex(x, y):
 - Check if variable equals a constant
     - You don’t need to explicitly compare a value to True, or None, or 0 - you can just add it to the if statement. See Truth Value Testing for a list of what is considered false.
     - Truth Value Testing
-        - The following values are considered false: None, False, 0, 0L, 0.0, 0j, '', (), [], {}, instances of user-defined classes if the class defines a __nonzero__() or __len__() method, when that method returns the integer zero or bool value False
+        - The following values are considered false: None, False, 0, 0L, 0.0, 0j, '', (), [], {}, instances of user-defined classes if the class defines a \_\_nonzero\_\_() or \_\_len\_\_() method, when that method returns the integer zero or bool value False
         - All other values are considered true — so objects of many types are always true
     ```python
     #Bad
@@ -224,13 +224,13 @@ Useful Stuff
         x = x + 1  # The new x is another object
         ```
 - Create an ignored variable
-    - If you need to assign something (for instance, in Unpacking) but will not need that variable, use __
+    - If you need to assign something (for instance, in Unpacking) but will not need that variable, use \_\_
     ```python
     filename = 'foobar.txt'
-    basename, __, ext = filename.rpartition('.')
+    basename, \_\_, ext = filename.rpartition('.')
     ```
 - Create a length-N list of the same thing: `four_nones = [None] * 4`
-- Create a length-N list of lists: `four_lists = [[] for __ in xrange(4)]`
+- Create a length-N list of lists: `four_lists = [[] for \_\_ in xrange(4)]`
 - Create a string from a list
 ```python
 letters = ['s', 'p', 'a', 'm']
