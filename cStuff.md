@@ -1,10 +1,13 @@
 Some cool, tricky, hidden features in C
 =======================================
 
-Why Python is Slow: Looking Under the Hood
-------------------------------------------
-https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/
+This file contains some useful information about C.
 
+Useful Info
+-----------
+- Char array vs Char Pointer in C
+    - http://stackoverflow.com/questions/10186765/char-array-vs-char-pointer-in-c
+    - http://stackoverflow.com/questions/1704407/what-is-the-difference-between-char-s-and-char-s-in-c
 
 NOTE
 ----
