@@ -22,14 +22,14 @@ Best practices
 # create a concatenated string from 0 to 19 (e.g. "012..1819")
 nums = ""
 for n in range(20):
-nums += str(n)   # slow and inefficient
+    nums += str(n)   # slow and inefficient
 print nums
 
 #Good
 # create a concatenated string from 0 to 19 (e.g. "012..1819")
 nums = []
 for n in range(20):
-nums.append(str(n))
+    nums.append(str(n))
 print "".join(nums)  # much more efficient
 
 #Best
@@ -125,8 +125,8 @@ def make_complex(x, y):
 a = [3, 4, 5]
 b = []
 for i in a:
-if i > 4:
-b.append(i)
+    if i > 4:
+        b.append(i)
 
 #Good
 a = [3, 4, 5]
@@ -138,7 +138,7 @@ b = filter(lambda x: x > 4, a)
 # Add three to all list members.
 a = [3, 4, 5]
 for i in range(len(a)):
-a[i] += 3
+    a[i] += 3
 
 #Good
 a = [3, 4, 5]
@@ -162,8 +162,8 @@ for i, item in enumerate(a):
 
     #Good
     with open('file.txt') as f:
-    for line in f:
-    print line
+        for line in f:
+            print line
     ```
     - The with statement is better because it will ensure you always close the file, even if an exception is raised inside the with block.
 - Line Continuations
@@ -210,7 +210,6 @@ Useful Stuff
     - If it is not found, the Python interpreter will search for modu.py in the "path" recursively and raise an ImportError exception if it is not found.
     - Once modu.py is found, the Python interpreter will execute the module in an isolated scope.
     - Any top-level statement in modu.py will be executed, including other imports if any. Function and class definitions are stored in the module's dictionary.
-- Why Python is Slow: Looking Under the Hood: https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/
 - Mutable and immutable types
     - Python has two kinds of built-in or user-defined types: *Mutable* and *Immutable*
         - Mutable types are those that allow in-place modification of the content. Typical mutables are lists and dictionaries: All lists have mutating methods, like list.append() or list.pop(), and can be modified in place. The same goes for dictionaries.
@@ -227,10 +226,10 @@ Useful Stuff
     - If you need to assign something (for instance, in Unpacking) but will not need that variable, use \_\_
     ```python
     filename = 'foobar.txt'
-    basename, \_\_, ext = filename.rpartition('.')
+    basename, __, ext = filename.rpartition('.')
     ```
 - Create a length-N list of the same thing: `four_nones = [None] * 4`
-- Create a length-N list of lists: `four_lists = [[] for \_\_ in xrange(4)]`
+- Create a length-N list of lists: `four_lists = [[] for __ in xrange(4)]`
 - Create a string from a list
 ```python
 letters = ['s', 'p', 'a', 'm']
