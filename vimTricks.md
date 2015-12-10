@@ -6,8 +6,8 @@ This file contains some useful tricks in Vim.
 <br>
 
 ####Make vim into a hex editor
-:%!xxd
-:%!xxd -r
+:%!xxd  
+:%!xxd -r  
 
 ####Replace all occurrences in all lines of word foo with bar
 :%s/foo/bar/g
@@ -28,8 +28,8 @@ gg=G
 /fred\|joe
 
 ####Search for exactly 4 digit numbers
-/\<\d\d\d\d\>
-/\<\d\{4}\>
+/\<\d\d\d\d\>  
+/\<\d\{4}\>  
 
 ####find 3 empty lines
 /^\n\{3}
