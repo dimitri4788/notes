@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 2.8)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -std=c++11 -O0")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -Wall -std=c11 -O0")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -std=c++11 -O3")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -Wall -std=c11 -O3")
 
 #Set the binary directory location; all the executable will be there
 #   CMAKE_SOURCE_DIR points to the the top level directory
