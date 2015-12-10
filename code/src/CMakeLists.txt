@@ -8,5 +8,6 @@ add_executable(functionPointersAdvanced functionPointersAdvanced.c)
 add_executable(doublePointers doublePointers.c)
 add_executable(boostUsefulStuff boostUsefulStuff.cpp)
 add_executable(enterPasswordInTerminal enterPasswordInTerminal.c)
+add_executable(cStyleString cStyleString.cpp)
 
 target_link_libraries(boostUsefulStuff ${Boost_LIBRARIES})
