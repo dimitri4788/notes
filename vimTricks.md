@@ -24,7 +24,7 @@ This file contains some useful tricks in Vim.
 ####In normal mode, typing gg=G will reindent the entire file
 gg=G
 
-####Search for FRED OR JOE
+####Search for FRED OR JOE (a '\' is needed before '|')
 /fred\|joe
 
 ####Search for exactly 4 digit numbers
