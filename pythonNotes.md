@@ -199,9 +199,6 @@ from some.deep.module.inside.a.module import (a_nice_function, another_nice_func
 
 
 
-
-
-
 <br>
 
 Useful Stuff
@@ -236,6 +233,7 @@ letters = ['s', 'p', 'a', 'm']
 word = ''.join(letters)
 ```
 - Why Python is Slow: Looking Under the Hood: https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/
+- What is the difference between `@staticmethod` and `@classmethod` in Python?: http://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python
 
 <br>
 

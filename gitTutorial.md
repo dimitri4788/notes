@@ -352,3 +352,5 @@ $ export GIT_EDITOR=vim
 Sources
 -------
 - http://learnxinyminutes.com/docs/git/
+- A good tutorial on Git: https://www.youtube.com/watch?v=ZDR433b0HJY
+- The .gitignore file: https://www.youtube.com/watch?v=aj8ifYrzGas
