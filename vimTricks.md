@@ -51,3 +51,9 @@ H/M/L
 
 ####Clears the current line and enters insert mode
 S
+
+####Highlight non-ASCII characters
+/[^\x00-\x7F]
+This will do a negative match (via [^]) for characters between ASCII 0x00 and ASCII 0x7F (0-127), and appears to work in simple test. For extended ASCII, extend the range up to \xFF instead of \x7F using /[^\x00-\xFF].
+
+
