@@ -100,3 +100,18 @@ g#  previous matching search (not whole word) pattern under cursor
 
 %   jump to matching bracket { } [ ] ( )
 ```
+
+####Cool stuff
+```
+diw         delete the word the cursor is on
+caw         delete the word the cursor is on and put in insert mode
+di)         delete everything inside the bracket ( and )
+di}         delete everything inside the bracket { and }
+da)         dadelete everything inside the bracket and including ( and )
+yi)         yank all text inside ( and )
+va”         visually select inside and including double quotes
+va’         visually select everything inside and including single quotes
+vi}         visually select everything inside single quotes
+viw         visually select the word the cursor is on
+Shift+D     deletes from the cursor until the end of line
+```
