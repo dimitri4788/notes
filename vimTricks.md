@@ -53,7 +53,50 @@ H/M/L
 S
 
 ####Highlight non-ASCII characters
-/[^\x00-\x7F]
+/[^\x00-\x7F]  
 This will do a negative match (via [^]) for characters between ASCII 0x00 and ASCII 0x7F (0-127), and appears to work in simple test. For extended ASCII, extend the range up to \xFF instead of \x7F using /[^\x00-\xFF].
 
+####All the right moves
+```
+h   move one character left
+j   move one row down
+k   move one row up
+l   move one character right
+w   move to beginning of next word
+b   move to previous beginning of word
+e   move to end of word
+W   move to beginning of next word after a whitespace
+B   move to beginning of previous word before a whitespace
+E   move to end of word before a whitespace
 
+
+0   move to beginning of line
+$   move to end of line
+gg  move to first line
+G   move to last line
+nG  move to n'th line of file (where n is a number)
+
+H   move to top of screen
+M   move to middle of screen
+L   move to bottom of screen
+
+z.  put the line with the cursor at the center
+zt  put the line with the cursor at the top
+zb  put the line with the cursor at the bottom of the screen
+
+Ctrl-D  move half-page down
+Ctrl-U  move half-page up
+Ctrl-B  page up
+Ctrl-F  page down
+Ctrl-o  jump to last cursor position
+Ctrl-i  jump to next cursor position
+
+n   next matching search pattern
+N   previous matching search pattern
+*   next whole word under cursor
+#   previous whole word under cursor
+g*  next matching search (not whole word) pattern under cursor
+g#  previous matching search (not whole word) pattern under cursor
+
+%   jump to matching bracket { } [ ] ( )
+```

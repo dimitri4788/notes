@@ -22,6 +22,28 @@ Git stuff
     - Staged
     - Committed
 
+<br>
+
+FUC
+---
+Frequently used commands:
+```sh
+# On a typical day
+$ git add <fileName>  # start tracking new files and also to stage changes to already tracked files
+$ git status  # to see what has been modified and staged
+$ git diff <fileName>  # to see the changes that are staged or modified on disk but unstaged
+$ git commit -m <message>  # to record your snapshot into history
+$ git push origin <branchName>  # to push to the remote server
+
+# On a less typical day
+$ git status -s  # give the output in the short-format
+$ git branch -d <branchname>  # delete a local branch
+$ git push remote-name --delete <branchname>  # delete remote branch. remote-name=origin, for example
+$ git remote -v  # list your remote aliases with actual URL for each alias
+$ git remote rename [old-alias] [new-alias]  # rename remote aliases, e.g. git remote rename github origin
+```
+
+<br>
 
 Commands
 --------
@@ -332,6 +354,8 @@ $ git remote
 origin
 ```
 
+<br>
+
 Extra notes
 -----------
 - Use "bare double dash" (--) to separate options from a list of arguments. For example, here if we have both a file and a tag named main.c, then we will get different results
@@ -344,13 +368,11 @@ $ git checkout -- main.c
 $ export GIT_EDITOR=vim
 ```
 
-
-
-
-
+<br>
 
 Sources
 -------
 - http://learnxinyminutes.com/docs/git/
 - A good tutorial on Git: https://www.youtube.com/watch?v=ZDR433b0HJY
 - The .gitignore file: https://www.youtube.com/watch?v=aj8ifYrzGas
+- Good article: http://longair.net/blog/2009/04/16/git-fetch-and-merge/
