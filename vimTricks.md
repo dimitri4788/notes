@@ -233,5 +233,15 @@ braces:         i{ and a{
 tags:           it and at
 ```
 
+How to insert text at beginning of each line in Vim?
+----------------------------------------------------
+Use Ctrl+V to enter visual block mode  
+Move Up/Downto select the columns of text in the lines you want to comment  
+Then hit Shift+i and type the text you want to insert  
+Then hit Esc, wait 1 second and the inserted text will appear on every line  
 
+How to add text at the end of each line in Vim?
+-----------------------------------------------
+(comma in this example)  
+:%s/$/,/
 
