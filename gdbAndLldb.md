@@ -61,3 +61,4 @@ Sources
 - http://lldb.llvm.org/lldb-gdb.html
 - http://processors.wiki.ti.com/index.php/Multithreaded_Debugging_Made_Easier_by_Forcing_Core_Dumps
 - http://lldb.llvm.org/tutorial.html
+- Building GDB for Darwin: https://sourceware.org/gdb/wiki/BuildingOnDarwin
