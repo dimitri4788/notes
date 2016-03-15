@@ -41,6 +41,7 @@ $ git branch -d <branchname>  # delete a local branch
 $ git push remote-name --delete <branchname>  # delete remote branch. remote-name=origin, for example
 $ git remote -v  # list your remote aliases with actual URL for each alias
 $ git remote rename [old-alias] [new-alias]  # rename remote aliases, e.g. git remote rename github origin
+$ git diff --name-only --diff-filter=U  # simplest way to git a list of conflicted files
 ```
 
 <br>
