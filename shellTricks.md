@@ -96,3 +96,33 @@ $ find . -type f -print0 | xargs -0 sed -i '' -e 's/LOG(/\/\/LOG(/g’
 # Find how many threads were used in a log file
 $ cat sample_0.log  | awk '{print $3}' | sort | uniq
 ```
+
+###Grep
+```sh
+Beginning of line (^): grep "^Nov 10" logFile.txt
+End of the line ($): grep "terminating.$" messages.txt
+Count of empty lines (^$): grep -c "^$" messages.txt
+Single Character (.): The special meta-character "." (dot) matches any character except the end of the line character
+Zero or more occurrence (*): The special character "*" matches zero or more occurrence of the previous character
+                             grep "kernel: *." *: matches for kernel and colon symbol followed by any number of spaces/no space and “.” matches any single character
+One or more occurrence (\+): grep "hi \+hello" input.txt
+Zero or one occurrence (\?): grep "hi \?hello" input.txt
+$ grep  -v "^#\|^'\|^\/\/" logFile.txt: This command searches for the line which does not start with # or single quote (‘) or double front slashes (//)
+Word boundary (\b): grep -i "\bthe\b" logFile.txt: \b is to match for a word boundary. \b matches any character(s) at the beginning (\bxx) and/or end (xx\b) of a word
+```
+
+###Find
+```sh
+How to find all the files greater than certain size?
+$ find . -type f -size +100M
+
+How to find files that are not modified in the last x number of days?
+$ find . -mtime +60  # 60 days
+
+How to find files that are modified in the last x number of days?
+$ find . –mtime -2  # 2 days
+
+How to delete all the archive files with extension *.tar.gz and greater than 100MB?
+$ find / -type f -name *.tar.gz -size +100M -exec ls -l {} \;
+$ find / -type f -name *.tar.gz -size +100M -exec rm -f {} \;
+```
