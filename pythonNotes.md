@@ -241,3 +241,14 @@ Source
 ------
 - http://docs.python-guide.org/en/latest/
 - http://learnpythonthehardway.org/book/index.html
+- Introduction to Pip and Virtualenv: https://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/
+- Python @classmethod and @staticmethod
+    - http://stackoverflow.com/questions/12179271/python-classmethod-and-staticmethod-for-beginner
+    - http://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python
+- What does the yield keyword do in Python?
+    - http://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do-in-python
+    - https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/
+- Iterators, generators and decorators:
+    - http://pymbook.readthedocs.org/en/latest/igd.html
+    - http://nvie.com/posts/iterators-vs-generators/
+
