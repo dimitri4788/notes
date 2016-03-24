@@ -95,9 +95,15 @@ $ find . -type f -print0 | xargs -0 sed -i '' -e 's/LOG(/\/\/LOG(/g’
 
 # Find how many threads were used in a log file
 $ cat sample_0.log  | awk '{print $3}' | sort | uniq
+
+# Convert a file to all upper-case
+$ tr a-z A-Z < employee.txt
+
+# Convert a file to all lower-case
+$ tr A-Z a-z < department.txt
 ```
 
-###Grep
+###grep
 ```sh
 Beginning of line (^): grep "^Nov 10" logFile.txt
 End of the line ($): grep "terminating.$" messages.txt
@@ -111,18 +117,127 @@ $ grep  -v "^#\|^'\|^\/\/" logFile.txt: This command searches for the line which
 Word boundary (\b): grep -i "\bthe\b" logFile.txt: \b is to match for a word boundary. \b matches any character(s) at the beginning (\bxx) and/or end (xx\b) of a word
 ```
 
-###Find
+###find
 ```sh
-How to find all the files greater than certain size?
+# How to find all the files greater than certain size?
 $ find . -type f -size +100M
 
-How to find files that are not modified in the last x number of days?
+# How to find files that are not modified in the last x number of days?
 $ find . -mtime +60  # 60 days
 
-How to find files that are modified in the last x number of days?
+# How to find files that are modified in the last x number of days?
 $ find . –mtime -2  # 2 days
 
-How to delete all the archive files with extension *.tar.gz and greater than 100MB?
+# How to delete all the archive files with extension *.tar.gz and greater than 100MB?
 $ find / -type f -name *.tar.gz -size +100M -exec ls -l {} \;
 $ find / -type f -name *.tar.gz -size +100M -exec rm -f {} \;
+```
+
+###xargs
+```sh
+# xargs is a very powerful command that takes output of a command and pass it as argument to another command
+
+# Delete too many files using rm
+$ find ~ -name ‘*.log’ -print0 | xargs -0 rm -f
+
+# Get a list of all the *.conf file under /etc/
+$ find /etc -name "*.conf" | xargs ls –l
+```
+
+###sort
+```sh
+# Sort a text file in ascending order
+$ sort names.txt
+
+# Sort a text file in descending order
+$ sort -r names.txt
+
+# Sort a colon delimited text file on 2nd field
+$ sort -t: -k 2 names.txt
+```
+
+###cut
+```sh
+# Display the 1st field (employee name) from a colon delimited file
+$ cut -d: -f 1 names.txt
+
+# Display 1st and 3rd field from a colon delimited file
+$ cut -d: -f 1,3 names.txt
+
+# Display only the first 8 characters of every line in a file
+$ cut -c 1-8 names.txt
+```
+
+###sed
+```sh
+$ sed 'ADDRESSs/REGEXP/REPLACEMENT/FLAGS' filename
+$ sed 'PATTERNs/REGEXP/REPLACEMENT/FLAGS' filename
+
+#     s is substitute command
+#     / is a delimiter
+#     REGEXP is regular expression to match
+#     REPLACEMENT is a value to replace
+
+# FLAGS can be any of the following :
+#     g Replace all the instance of REGEXP with REPLACEMENT
+#     n Could be any number,replace nth instance of the REGEXP with REPLACEMENT.
+#     p If substitution was made, then prints the new pattern space.
+#     i match REGEXP in a case-insensitive manner.
+#     w file If substitution was made, write out the result to the given file.
+#     We can use different delimiters ( one of @ % ; : ) instead of /
+
+# Examples:
+# Substitute Word "Linux" to "Linux-Unix" s// (only first matched Linux is replaced)
+$ sed 's/Linux/Linux-Unix/' thegeekstuff.txt
+
+# Substitute all Appearances of a Word Using sed s//g
+$ sed 's/Linux/Linux-Unix/g' thegeekstuff.txt
+
+# Substitute Only 2nd Occurrence of a Word Using sed s//2
+$ sed 's/Linux/Linux-Unix/2' thegeekstuff.txt
+
+# Delete Last X Number of Characters From Each Line (This example deletes last 3 characters from each line)
+$ sed 's/...$//' thegeekstuff.txt
+
+# Delete all the comment lines from a file
+$ sed -e 's/#.*//' thegeekstuff.txt
+
+# Delete all the comment lines from a file and then remove those blank/empty lines
+$ sed -e 's/#.*//;/^$/d' thegeekstuff.txt
+```
+
+###awk
+```sh
+$ awk '/search pattern1/ {Actions}
+       /search pattern2/ {Actions}' file
+
+# In the above awk syntax:
+#     search pattern is a regular expression.
+#     Actions – statement(s) to be performed.
+#     several patterns and actions are possible in Awk.
+#     file – Input file.
+#     Single quotes around program is to avoid shell not to interpret any of its special characters.
+
+Awk Working Methodology:
+#     Awk reads the input files one line at a time.
+#     For each line, it matches with given pattern in the given order, if matches performs the corresponding action.
+#     If no pattern matches, no action will be performed.
+#     In the above syntax, either search pattern or action are optional, But not both.
+#     If the search pattern is not given, then Awk performs the given actions for each line of the input.
+#     If the action is not given, print all that lines that matches with the given patterns which is the default action.
+#     Empty braces with out any action does nothing. It wont perform default printing operation.
+#     Each statement in Actions should be delimited by semicolon.
+
+#Examples:
+# By default Awk prints every line from the file
+$ awk '{print;}' employee.txt
+
+# Print column 2 and 5
+$ awk '{print $2,$5;}' employee.txt
+
+# Find the employees who has employee id greater than 200
+$ awk '$1 >200' employee.txt
+
+# Print the list of employees in Technology (4th column) department
+$ awk '$4 ~/Technology/' employee.txt
 ```
