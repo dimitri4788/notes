@@ -241,3 +241,30 @@ $ awk '$1 >200' employee.txt
 # Print the list of employees in Technology (4th column) department
 $ awk '$4 ~/Technology/' employee.txt
 ```
+
+###chmod
+```sh
+$ chmod u+x filename  # give execute permission to the user
+$ chmod u+r,g+x filename  # give read permission to the user and execute permission to the group
+$ chmod u-rx filename  # remove read and execute permission for the user
+$ chmod a+x filename  # assigns execute privilege to user, group and others
+$ chmod -R 755 directory-name/  # Use option -R to change the permission recursively
+```
+
+###zip
+```sh
+# Zip multiple files
+$ zip var-log-files.zip /var/log/*
+
+# How to zip a directory and it’s files recursively?
+$ zip -r var-log-dir.zip /var/log/
+
+# How to unzip a *.zip compressed file?
+$ unzip var-log.zip
+
+# To see a detailed output during unzip pass the –v option as shown below.
+$ unzip -v var-log.zip
+
+# How to list contents of a zip file without uncompressing it?
+$ unzip -l var-log.zip
+```
