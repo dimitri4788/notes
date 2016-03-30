@@ -101,6 +101,14 @@ $ tr a-z A-Z < employee.txt
 
 # Convert a file to all lower-case
 $ tr A-Z a-z < department.txt
+
+# Delete or Remove Files With Inode Number
+$ find . -inum [inode-number] -exec rm -i {} \;
+Example:
+$ cd /tmp
+$ touch "\+Xy \+\8"
+$ rm \+Xy \+\8  # Will not work, use inode number to delete the file
+$ ls -il # Remove file by an inode number, but first find out the file inode number:
 ```
 
 ###grep
