@@ -237,6 +237,49 @@ word = ''.join(letters)
 
 <br>
 
+
+Working on a new project
+------------------------
+```sh
+# Change directory to where new project is located
+$ cd <PathToYourProject>
+
+# Install pip
+$ sudo easy_install pip
+
+# First install virtualenv
+$ sudo pip install virtualenv
+
+# Create a new virtual environment
+$ virtualenv env
+# NOTE: you shouldn't commit the env directory. Add it to your .gitignore file if it is not there
+
+# Activate the environment
+$ source env/bin/activate
+# NOTE: You should always activate the virtual environment before you start working on your project
+
+# If you want to output installed packages in requirements format (this will be saved to requirements.txt)
+# This should only be ran if you install new libraries in the virtual environment that your project depends on
+$ pip freeze > requirements.txt
+
+# Install the dependencies into this virtual environment
+$ pip install -r requirements.txt
+
+# Finally, install the project so it is ready to be used. This will create a command line tool depending on your setup.py file
+$ python setup.py install
+$ python setup.py install --record files.txt  # Run this if you want to save the installed stuff for easy deletion later on
+
+# Deactivate the virtual environment when you are done working on your project
+$ deactivate
+
+
+# ######### Additional commands #########
+# To delete the installed  binaries and other data
+$ cat files.txt | xargs rm -rf
+```
+
+<br>
+
 Source
 ------
 - http://docs.python-guide.org/en/latest/
