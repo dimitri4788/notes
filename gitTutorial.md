@@ -122,6 +122,13 @@ $ git checkout f22b25e mars.txt
 $ git checkout origin/<branchName>
 # But if you want to work on that branch, you'll need to create a local tracking branch
 $ git checkout -b <branchName> origin/<branchName>
+
+# Checkout specific files from another branch
+# As an example, this is how you could update your gh-pages branch to include the latest changes made to a file that is on the master branch
+# On branch master
+$ git checkout gh-pages
+$ git checkout master -- myplugin.js
+$ git commit -m "Update myplugin.js from master"
 ```
 clone
 - Clones, or copies, an existing repository into a new directory. It also adds remote-tracking branches for each branch in the cloned repo, which allows you to push to a remote branch.
