@@ -56,6 +56,11 @@ S
 /[^\x00-\x7F]  
 This will do a negative match (via [^]) for characters between ASCII 0x00 and ASCII 0x7F (0-127), and appears to work in simple test. For extended ASCII, extend the range up to \xFF instead of \x7F using /[^\x00-\xFF].
 
+####Add a newline after a given pattern
+Say you want to add newline between all the comma. Suppose you want to insert a line break before each comma ',' in a line. To do that, enter these commands  
+/,  
+:s//\r&/g  
+
 ####All the right moves
 ```
 h   move one character left
