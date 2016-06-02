@@ -60,6 +60,8 @@ This will do a negative match (via [^]) for characters between ASCII 0x00 and AS
 Say you want to add newline between all the comma. Suppose you want to insert a line break before each comma ',' in a line. To do that, enter these commands  
 /,  
 :s//\r&/g  
+The first command searches for any occurrence of each of the three characters. You can refine this search (that is, search again after correcting any problems with the search pattern). When the search correctly highlights the wanted hits, enter the second command to insert a newline before each hit in the current line. In the substitute command, the find pattern is empty, so the last search is used; in the replacement, \r inserts a newline and & inserts the search hit.  
+Use :%s//\r&/g if you want to replace all occurrences in all lines.  
 
 ####All the right moves
 ```
