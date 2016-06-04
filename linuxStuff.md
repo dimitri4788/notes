@@ -45,6 +45,7 @@ In order for an executable to find the required libraries to link with during ru
     - i.e. ```/sbin/ldconfig -p | grep libGL```
 - **ldd** - print shared library dependencies
     - Better to use ```objdump -p /path/to/program | grep NEEDED```
+        - Reason: Be aware, however that in some circumstances, some versions of ldd may attempt to obtain the dependency information by directly executing the program. Thus, you should never employ ldd on an untrusted executable, since this may result in the execution of arbitrary code.
 - **objdump** - display information from object files
 - **ld.so** - dynamic linker/loader
 
