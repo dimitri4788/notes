@@ -49,6 +49,86 @@ In order for an executable to find the required libraries to link with during ru
     - In ELF, shared libraries can be loaded anywhere in memory, and can even appear to be at different addresses to different applications running on the same computer (with the code still effectively loaded in only one place in physical memory)! Shared libraries got more complicated in ELF, but that was compiler-side complexity, as opposed to programmer-side
 
 
+###Compilation and Execution
+- Compilation can involve up to four stages:
+    - *Preprocessing (cpp)*
+        - Text Substitution
+        - Stripping of Comments
+        - File Inclusion
+    - *Compilation proper (cc/gcc)*
+    - *Assembly (as)*
+    - *Linking (ld)*
+- GCC is capable of preprocessing and compiling several files either into several assembler input files, or into one assembler input file; then each assembler input file produces an object file, and linking combines all the object files (those newly compiled, and those specified as input) into an executable file
+- Example
+    - Given a source file: hello.c
+    - cpp hello.c > hello.i
+        - or gcc -E hello.c -o hello.i
+    - gcc -Wall -S hello.i -o hello.s
+    - as hello.s -o hello.o
+        - gcc -c hello.c
+    - ld other-command-line-options hello.o -o a.out
+        - or gcc hello.o
+- The final executable (a.out) then is ready to be loaded. To run the executable, we type its name at the shell prompt: ```$ ./a.out```
+- The shell invokes the loader function, which copies the code and data in the executable file a.out into memory, and then transfers control to the beginning of the program
+    - The loader is a program called **execve**, which loads the code and data of the executable object file into memory and then runs the program by jumping to the first instruction
+- Linkers and loaders perform various related but conceptually different tasks:
+    - *Program Loading*: This refers to copying a program image from hard disk to the main memory in order to put the program in a ready-to-run state. In some cases, program loading also might involve allocating storage space or mapping virtual addresses to disk pages
+    - *Relocation*: Compilers and assemblers generate the object code for each input module with a starting address of zero. Relocation is the process of assigning load addresses to different parts of the program by merging all sections of the same type into one section. The code and data section also are adjusted so they point to the correct runtime addresses
+    - *Symbol Resolution*: A program is made up of multiple subprograms; reference of one subprogram to another is made through symbols. A linker's job is to resolve the reference by noting the symbol's location and patching the caller's object code
+- So a considerable overlap exists between the functions of linkers and loaders. One way to think of them is: the loader does the program loading; the linker does the symbol resolution; and either of them can do the relocation
+
+
+###Object Files
+- Object files comes in three forms:
+    - *Relocatable object file*: which contains binary code and data in a form that can be combined with other relocatable object files at compile time to create an executable object file
+    - *Executable object file*: which contains binary code and data in a form that can be directly loaded into memory and executed
+    - *Shared object file*: which is a special type of relocatable object file that can be loaded into memory and linked dynamically, either at load time or at run time
+- Compilers and assemblers generate relocatable object files (also shared object files). Linkers combine these object files together to generate executable object files
+- Object files vary from system to system. The first UNIX system used the **a.out** format. Early versions of System V used the **COFF** (common object file format). Windows NT uses a variant of COFF called PE (portable executable) format; IBM uses its own IBM 360 format. Modern UNIX systems, such as Linux and Solaris use the UNIX **ELF** (executable and linking format)
+
+
+###ELF (relocatable) object file
+- The ELF header starts with a 4-byte magic string, \177ELF. The various sections in the ELF relocatable object file are:
+    - *.text*, the machine code of the compiled program.
+    - *.rodata*, read-only data, such as the format strings in printf statements.
+    - *.data*, initialized global variables.
+    - *.bss*, uninitialized global variables. BSS stands for block storage start, and this section actually occupies no space in the object file; it is merely a place holder.
+    - *.symtab*, a symbol table with information about functions and global variables defined and referenced in the program. This table does not contain any entries for local variables; those are maintained on the stack.
+    - *.rel.text*, a list of locations in the .text section that need to be modified when the linker combines this object file with other object files.
+    - *.rel.data*, relocation information for global variables referenced but not defined in the current module.
+    - *.debug*, a debugging symbol table with entries for local and global variables. This section is present only if the compiler is invoked with a -g option.
+    - *.line*, a mapping between line numbers in the original C source program and machine code instructions in the .text section. This information is required by debugger programs.
+    - *.strtab*, a string table for the symbol tables in the .symtab and .debug sections.
+
+
+###Symbols and Symbol Resolution
+Every relocatable object file has a symbol table and associated symbols. In the context of a linker, the following kinds of symbols are present:  
+- **Global symbols defined by the module and referenced by other modules**. All non-static functions and global variables fall in this category.
+- **Global symbols referenced by the input module but defined elsewhere**. All functions and variables with extern declaration fall in this category.
+- **Local symbols defined and referenced exclusively by the input module**. All static functions and static variables fall here.
+
+<br>
+
+During the process of symbol resolution using static libraries, linker scans the relocatable object files and archives from left to right as input on the command line. During this scan, linker maintains a set of O, relocatable object files that go into the executable; a set U, unresolved symbols; and a set of D, symbols defined in previous input modules. Initially, all three sets are empty.  
+- For each input argument on the command line, linker determines if input is an object file or an archive. If input is a relocatable object file, linker adds it to set O, updates U and D and proceeds to next input file.
+- If input is an archive, it scans through the list of member modules that constitute the archive to match any unresolved symbols present in U. If some archive member defines any unresolved symbol that archive member is added to the list O, and U and D are updated per symbols found in the archive member. This process is iterated for all member object files.
+- After all the input arguments are processed through the above two steps, if U is found to be not empty, linker prints an error report and terminates. Otherwise, it merges and relocates the object files in O to build the output executable file.
+
+NOTE: This also explains why static libraries are placed at the end of the linker command. Special care must be taken in cases of cyclic dependencies between libraries. Input libraries must be ordered so each symbol is referenced by a member of an archive and at least one definition of a symbol is followed by a reference to it on the command line. Also, if an unresolved symbol is defined in more than one static library modules, the definition is picked from the first library found in the command line.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ###Tools
 - **ar** - create, modify, and extract from archives
 - **ranlib** - generate index to archive
