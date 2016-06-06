@@ -107,8 +107,6 @@ Every relocatable object file has a symbol table and associated symbols. In the 
 - **Global symbols referenced by the input module but defined elsewhere**. All functions and variables with extern declaration fall in this category.
 - **Local symbols defined and referenced exclusively by the input module**. All static functions and static variables fall here.
 
-<br>
-
 During the process of symbol resolution using static libraries, linker scans the relocatable object files and archives from left to right as input on the command line. During this scan, linker maintains a set of O, relocatable object files that go into the executable; a set U, unresolved symbols; and a set of D, symbols defined in previous input modules. Initially, all three sets are empty.  
 - For each input argument on the command line, linker determines if input is an object file or an archive. If input is a relocatable object file, linker adds it to set O, updates U and D and proceeds to next input file.
 - If input is an archive, it scans through the list of member modules that constitute the archive to match any unresolved symbols present in U. If some archive member defines any unresolved symbol that archive member is added to the list O, and U and D are updated per symbols found in the archive member. This process is iterated for all member object files.
