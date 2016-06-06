@@ -51,23 +51,23 @@ In order for an executable to find the required libraries to link with during ru
 
 ###Compilation and Execution
 - Compilation can involve up to four stages:
-    - *Preprocessing (cpp)*
+    - **Preprocessing** (cpp)
         - Text Substitution
         - Stripping of Comments
         - File Inclusion
-    - *Compilation proper (cc/gcc)*
-    - *Assembly (as)*
-    - *Linking (ld)*
+    - **Compilation proper** (cc/gcc)
+    - **Assembly** (as)
+    - **Linking** (ld)
 - GCC is capable of preprocessing and compiling several files either into several assembler input files, or into one assembler input file; then each assembler input file produces an object file, and linking combines all the object files (those newly compiled, and those specified as input) into an executable file
 - Example
     - Given a source file: hello.c
-    - cpp hello.c > hello.i
-        - or gcc -E hello.c -o hello.i
-    - gcc -Wall -S hello.i -o hello.s
-    - as hello.s -o hello.o
-        - gcc -c hello.c
-    - ld other-command-line-options hello.o -o a.out
-        - or gcc hello.o
+    - ```cpp hello.c > hello.i```
+        - or ```gcc -E hello.c -o hello.i```
+    - ```gcc -Wall -S hello.i -o hello.s```
+    - ```as hello.s -o hello.o```
+        - ```gcc -c hello.c```
+    - ```ld other-command-line-options hello.o -o a.out```
+        - or ```gcc hello.o```
 - The final executable (a.out) then is ready to be loaded. To run the executable, we type its name at the shell prompt: ```$ ./a.out```
 - The shell invokes the loader function, which copies the code and data in the executable file a.out into memory, and then transfers control to the beginning of the program
     - The loader is a program called **execve**, which loads the code and data of the executable object file into memory and then runs the program by jumping to the first instruction
