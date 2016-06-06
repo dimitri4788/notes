@@ -110,6 +110,9 @@ $ touch "\+Xy \+\8"
 $ rm \+Xy \+\8  # Will not work, use inode number to delete the file
 $ ls -il # Remove file by an inode number, but first find out the file inode number:
 
+# Find all the files with whitespaces in their content
+$ grep -RnI "\s\+$" *
+
 # Remove whitespaces inside all the files (i.e. in the file content, not the filename)
 $ sed -i 's/\s\+$//g' *
 ```
