@@ -20,6 +20,7 @@ GNU Linux Stuff
 #####Compiler options
 - Wall: include warnings. See man page for warnings specified
 - fPIC: Compiler directive to output position independent code, a characteristic required by shared libraries. Also see "-fpic"
+    - PIC stands for position-independent code. The functions in a shared library may be loaded at different addresses in different programs, so the code in the shared object must not depend on the address (or position) at which it is loaded. This consideration has no impact on you, as the programmer, except that you must remember to use the -fPIC flag when compiling code that will be used in a shared library
 - shared: Produce a shared object which can then be linked with other objects to form an executable
 - Wl,options: Pass options to linker
     - In this example the options to be passed on to the linker are: "-soname libctest.so.1". The name passed with the "-o" option is passed to gcc
@@ -129,6 +130,7 @@ NOTE: This also explains why static libraries are placed at the end of the linke
 
 ###Tools
 - **ar** - create, modify, and extract from archives
+    - ```ar -t <staticLibrary.a>```: find the object files packed into this static library
 - **ranlib** - generate index to archive
 - **nm** - list symbols from object files, archive library or shared library
 - **ld** - Linker
@@ -143,9 +145,7 @@ NOTE: This also explains why static libraries are placed at the end of the linke
 - **readelf** - displays information about ELF files
 
 
-Useful reads
-------------
+###Useful reads
 ####Linker (ld)
 - Why does the order in which libraries are linked sometimes cause errors in GCC?
     - http://stackoverflow.com/questions/45135/why-does-the-order-in-which-libraries-are-linked-sometimes-cause-errors-in-gcc
-
