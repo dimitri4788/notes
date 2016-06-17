@@ -26,7 +26,7 @@ This serves two purposes:
 - At release time, you just have to change "Unreleased" to the version number and add a new "Unreleased" header at the top.
 
 
-#####What about yanked releases?
+####What about yanked releases?
 Yanked releases are versions that had to be pulled because of a serious bug or security issue. Often these versions don't even appear in change logs. They should. This is how you should display them:  
 `## 0.0.5 - 2014-12-13 [YANKED]`  
 The [YANKED] tag is loud for a reason. It's important for people to notice it. Since it's surrounded by brackets it's also easier to parse programmatically.
