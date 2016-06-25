@@ -8,12 +8,11 @@ $ valgrind --tool=memcheck --show-reachable=yes --error-limit=no --leak-check=fu
 ```
 
 ####Flags
-- --tool=<toolname> [default: memcheck]
+- --tool=<toolname> [default: memcheck]  
 Run the Valgrind tool called toolname, e.g. memcheck, cachegrind, callgrind, helgrind, drd, massif, lackey, none, exp-sgcheck, exp-bbv, exp-dhat, etc.
 
-- --suppressions=<filename> [default: $PREFIX/lib/valgrind/default.supp]
+- --suppressions=<filename> [default: $PREFIX/lib/valgrind/default.supp]  
 Specifies an extra file from which to read descriptions of errors to suppress. You may use up to 100 extra suppression files.
-```
 
 
 
