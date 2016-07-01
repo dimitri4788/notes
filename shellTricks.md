@@ -282,3 +282,36 @@ $ unzip -v var-log.zip
 # How to list contents of a zip file without uncompressing it?
 $ unzip -l var-log.zip
 ```
+
+###top
+```sh
+$ top
+# press "f" to select what fields to display
+# press "O" to sort the columns on a field
+# press "o" to move the columns for a field left or right
+# press "k" to kill a process; enter pid of it
+# press "c" to display absolute path of the command and its arguments
+
+# Display Selected User in Top Output Using top -u
+$ top -u <username>  # For example: top -u daggarwal
+
+# Quit Top Command After a Specified Number of Iterations Using top -n
+$ top -n 2
+
+# Executing Unix Top Command in Batch Mode
+$ top -b -n 1
+#   Note: This option is very helpful when you want to capture the unix top command output to a readable text file as we discussed earlier.
+
+# Decrease Number of Processes Displayed in Top Output – Press n
+#   Press n in the Interactive mode, which prompts for a number and shows only that.
+
+# Toggle Top Header to Increase Number of Processes Displayed
+#   Press l – to hide / show the load average. 1st header line.
+#   Press t – to hide / show the CPU states. 2nd and 3rd header line.
+#   Press m – to hide / show the memory information. 4th and 5th line.
+
+# Save top Configuration Settings – Press W
+#   To save the top configuration, press W, which will write the configuration files to ~/.toprc. This will display the write confirmation message as shown below.
+
+# Useful link: http://www.thegeekstuff.com/2010/01/15-practical-unix-linux-top-command-examples/
+```
