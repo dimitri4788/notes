@@ -42,6 +42,8 @@ $ git push remote-name --delete <branchname>  # delete remote branch. remote-nam
 $ git remote -v  # list your remote aliases with actual URL for each alias
 $ git remote rename [old-alias] [new-alias]  # rename remote aliases, e.g. git remote rename github origin
 $ git diff --name-only --diff-filter=U  # simplest way to git a list of conflicted files
+$ git --no-pager diff --name-only SHA1 SHA2  # find file names only that changed between two commits
+$ git --no-pager diff --name-only HEAD~10 HEAD~5  # find file names only that changed between two commits
 ```
 
 <br>
