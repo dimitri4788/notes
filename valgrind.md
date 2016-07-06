@@ -26,19 +26,11 @@ When enabled, search for memory leaks when the client program finishes. If set t
 - --suppressions=<filename> [default: $PREFIX/lib/valgrind/default.supp]  
 Specifies an extra file from which to read descriptions of errors to suppress. You may use up to 100 extra suppression files.
 
-- --show-leak-kinds=<set> [default: definite,possible]
-Specifies the leak kinds to show in a full leak search, in one of the following ways:
-
-a comma separated list of one or more of definite indirect possible reachable.
-
-all to specify the complete set (all leak kinds). It is equivalent to --show-leak-kinds=definite,indirect,possible,reachable.
-
-none for the empty set.
-
-
-
-
-
+- --show-leak-kinds=<set> [default: definite,possible]  
+Specifies the leak kinds to show in a full leak search, in one of the following ways:  
+    - a comma separated list of one or more of definite indirect possible reachable
+    - all to specify the complete set (all leak kinds). It is equivalent to --show-leak-kinds=definite,indirect,possible,reachable
+    - none for the empty set
 
 ####Sources
 - http://es.gnu.org/~aleksander/valgrind/valgrind-memcheck.pdf
