@@ -1,5 +1,19 @@
 ##Valgrind
 
+Valgrind is an instrumentation framework for building dynamic analysis tools. It comes with a set of tools each of which performs some kind of debugging, profiling, or similar task that helps you improve your programs. Valgrind's architecture is modular, so new tools can be created easily and without disturbing the existing structure.  
+
+A number of useful tools are supplied as standard:  
+- *Memcheck* is a memory error detector. It helps you make your programs, particularly those written in C and C++, more correct.
+- *Cachegrind* is a cache and branch-prediction profiler. It helps you make your programs run faster.
+- *Callgrind* is a call-graph generating cache profiler. It has some overlap with Cachegrind, but also gathers some information that Cachegrind does not.
+- *Helgrind* is a thread error detector. It helps you make your multi-threaded programs more correct.
+- *DRD* is also a thread error detector. It is similar to Helgrind but uses different analysis techniques and so may find different problems.
+- *Massif* is a heap profiler. It helps you make your programs use less memory.
+- *DHAT* is a different kind of heap profiler. It helps you understand issues of block lifetimes, block utilisation, and layout inefficiencies.
+- *SGcheck* is an experimental tool that can detect overruns of stack and global arrays. Its functionality is complementary to that of Memcheck: SGcheck finds problems that Memcheck can't, and vice versa
+- *BBV* is an experimental SimPoint basic block vector generator. It is useful to people doing computer architecture research and development.
+
+
 ```sh
 $ valgrind --tool=memcheck --show-reachable=yes --error-limit=no --leak-check=full --suppressions=<file.supp> someprog
 
@@ -34,3 +48,4 @@ Specifies the leak kinds to show in a full leak search, in one of the following 
 
 ####Sources
 - http://es.gnu.org/~aleksander/valgrind/valgrind-memcheck.pdf
+- http://valgrind.org/docs/manual/mc-manual.html
