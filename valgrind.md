@@ -13,6 +13,28 @@ A number of useful tools are supplied as standard:
 - *SGcheck* is an experimental tool that can detect overruns of stack and global arrays. Its functionality is complementary to that of Memcheck: SGcheck finds problems that Memcheck can't, and vice versa
 - *BBV* is an experimental SimPoint basic block vector generator. It is useful to people doing computer architecture research and development.
 
+Valgrind distinguishes 4 different types of memory leaks in the generated output report:  
+- **Still Reachable**: Covers cases 1 and 2 (for the BBB blocks)
+- **Directly Lost**: Covers case 3 (for the BBB blocks)
+- **Indirectly Lost**: Covers cases 4 and 9 (for the BBB blocks)
+- **Possibly Lost**: Covers cases 5, 6, 7 and 8 (for the BBB blocks)
+NOTE: Directly and Indirectly Lost leaks are also referred as Definitely Lost leaks.  
+
+
+####Still reachable blocks
+A block of memory is reported to be Still Reachable when Memcheck finds, after process execution ends, at least one pointer with the start address of the block (a start-pointer).
+
+####Definitely Lost blocks
+A leak is considered Definitely Lost when, at process exit, there is no pointer or chain of pointers to the leaked memory block:  
+- When the start-pointer of a block of memory is fully lost, and also no other interior-pointer to that block of memory is available when process ends; Memcheck will report that block of memory as a ’Directly Lost’ leak.
+- When Memcheck finds a valid start-pointer or interior-pointer to a given block of memory, but that pointer is in another block which is ’Directly Lost’, Memcheck will report the block of memory as an ’Indirectly Lost’ leak.
+- Finally, when Memcheck finds a valid start-pointer or interior-pointer to a given block of memory, but that pointer is in another block which is ’Indirectly Lost’, Memcheck will report the block of memory as also being ’Indirectly Lost’.
+NOTE: The ’Definitely Lost’ memory leaks (both Direct and Indirect) are the ones the programmer should pay more attention to, as they clearly show real programming errors.
+
+####Possibly Lost blocks
+The term ’possibly’ here states that Valgrind does not know whether the leak is ’Definitely Lost’ or ’Still Reachable’: but the leaks are really of one of these two types. In other words, it’s a task for the programmer to check whether the leak is reachable or not. The ’Possibly Lost’ leaks will be reported in the absence of a valid start-pointer to the block, but when at least one interior-pointer is found. As you already know, Memcheck cannot decide if the interior-pointer is a valid one, or just a funny coincidence. As a rule of thumb, anyway, those interior-pointers should be treated as valid ones (and decide the real type of leak based on that).
+
+
 
 ```sh
 $ valgrind --tool=memcheck --show-reachable=yes --error-limit=no --leak-check=full --suppressions=<file.supp> someprog
