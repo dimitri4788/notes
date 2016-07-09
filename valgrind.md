@@ -82,7 +82,7 @@ Rather than having to type all the command line options on the terminal each tim
 
 ####Valgrind Suppression File
 Valgrind is (mostly) a memory error detector for Linux. It's very good at finding leaks and uninitialised variables; unfortunately it's too good, and usually produces a number of false positives. It comes with suppression files which automatically silence some of these.  
-When valgrind runs its default tool, Memcheck, it automatically tries to read a file called $PREFIX/lib/valgrind/default.supp ($PREFIX will normally be /usr). However you can make it use additional suppression files of your choice by adding --suppressions=<filename> to your command-line invocation. You can repeat this up to 100 times, which should be sufficient for most situations ;)
+When valgrind runs its default tool, Memcheck, it automatically tries to read a file called $PREFIX/lib/valgrind/default.supp ($PREFIX will normally be /usr). However you can make it use additional suppression files of your choice by adding --suppressions=<filename> to your command-line invocation.
 
 
 ####Sources
