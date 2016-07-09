@@ -68,6 +68,23 @@ Specifies the leak kinds to show in a full leak search, in one of the following 
     - all to specify the complete set (all leak kinds). It is equivalent to --show-leak-kinds=definite,indirect,possible,reachable
     - none for the empty set
 
+####Configiration file for Valgrind
+A file in the home directory with name **.valgrindrc** can be created with content for example:  
+```sh
+--memcheck:leak-check=full
+--show-leak-kinds=all
+--show-reachable=yes
+--suppressions=../valgrind.suppressions
+--suppressions=/home/deep/devel/wxGTK-2.8.12.supp
+```
+Rather than having to type all the command line options on the terminal each time, it's more sensible to write it to an rc file. Each time it runs, valgrind looks for options in files called ~/.valgrindrc and ./.valgrindrc.
+
+####Valgrind Suppression File
+Valgrind is (mostly) a memory error detector for Linux. It's very good at finding leaks and uninitialised variables; unfortunately it's too good, and usually produces a number of false positives. It comes with suppression files which automatically silence some of these.  
+When valgrind runs its default tool, Memcheck, it automatically tries to read a file called $PREFIX/lib/valgrind/default.supp ($PREFIX will normally be /usr). However you can make it use additional suppression files of your choice by adding --suppressions=<filename> to your command-line invocation. You can repeat this up to 100 times, which should be sufficient for most situations ;)
+
+
 ####Sources
 - http://es.gnu.org/~aleksander/valgrind/valgrind-memcheck.pdf
 - http://valgrind.org/docs/manual/mc-manual.html
+- https://wiki.wxwidgets.org/Valgrind_Suppression_File_Howto
