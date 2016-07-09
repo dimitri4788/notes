@@ -18,6 +18,7 @@ Valgrind distinguishes 4 different types of memory leaks in the generated output
 - **Directly Lost**
 - **Indirectly Lost**
 - **Possibly Lost**
+
 NOTE: Directly and Indirectly Lost leaks are also referred as Definitely Lost leaks.  
 
 
