@@ -145,3 +145,5 @@ Shared libraries can be loaded from applications even in the middle of their exe
 ####Linker (ld)
 - Why does the order in which libraries are linked sometimes cause errors in GCC?
     - http://stackoverflow.com/questions/45135/why-does-the-order-in-which-libraries-are-linked-sometimes-cause-errors-in-gcc
+- http://www.linuxjournal.com/article/6463?page=0,0
+- http://www.iecc.com/linker/
