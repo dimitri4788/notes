@@ -115,18 +115,13 @@ During the process of symbol resolution using static libraries, linker scans the
 
 NOTE: This also explains why static libraries are placed at the end of the linker command. Special care must be taken in cases of cyclic dependencies between libraries. Input libraries must be ordered so each symbol is referenced by a member of an archive and at least one definition of a symbol is followed by a reference to it on the command line. Also, if an unresolved symbol is defined in more than one static library modules, the definition is picked from the first library found in the command line.
 
+###Relocation
+Once the linker has resolved all the symbols, each symbol reference has exactly one definition. At this point, linker starts the process of relocation, which involves the following two steps:  
+- Relocating sections and symbol definitions. Linker merges all the sections of the same type into a new single section. For example, linker merges all the .data sections of all the input relocatable object files into a single .data section for the final executable. A similar process is carried out for the .code section. The linker then assigns runtime memory addresses to new aggregate sections, to each section defined by the input module and also to each symbol. After the completion of this step, every instruction and global variable in the program has a unique loadtime address.
+- Relocating symbol reference within sections. In this step, linker modifies every symbol reference in the code and data sections so they point to the correct loadtime addresses.
 
-
-
-
-
-
-
-
-
-
-
-
+###Loading Shared Libraries from Applications
+Shared libraries can be loaded from applications even in the middle of their executions. An application can request a dynamic linker to load and link shared libraries, even without linking those shared libraries to the executable. Linux, Solaris and other systems provides a series of function calls that can be used to dynamically load a shared object. Linux provides system calls, such as **dlopen, dlsym and dlclose**, that can be used to load a shared object, to look up a symbol in that shared object and to close the shared object, respectively. On Windows, LoadLibrary and GetProcAddress functions replace dlopen and dlsym, respectively.
 
 ###Tools
 - **ar** - create, modify, and extract from archives
@@ -143,7 +138,8 @@ NOTE: This also explains why static libraries are placed at the end of the linke
 - **objdump** - display information from object files
 - **ld.so** - dynamic linker/loader
 - **readelf** - displays information about ELF files
-
+- **strings** - list all the printable strings in a binary file
+- **strip** - deletes the symbol table information
 
 ###Useful reads
 ####Linker (ld)
