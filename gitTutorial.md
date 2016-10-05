@@ -402,8 +402,8 @@ $ git commit --amend
 - Oh shit, I accidentally committed to the wrong branch
 ```sh
 # undo the last commit, but leave the changes available
-git reset HEAD~ --soft
-git stash
+$ git reset HEAD~ --soft
+$ git stash
 # move to the correct branch
 $ git checkout name-of-the-correct-branch
 $ git stash pop
