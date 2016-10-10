@@ -103,8 +103,6 @@ For writing maintainable and scalable HTML documents
 * [Other](#other)
   * [Indent consistently](#indent-consistently)
   * [Use absolute path for internal links](#use-absolute-path-for-internal-links)
-* [Contributors](#contributors)
-* [License](#license)
 
 <!-- /toc -->
 
