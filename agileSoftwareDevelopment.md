@@ -30,7 +30,7 @@ Scrum projects do not have an upfront analysis or design phase; all work occurs 
 - Develop iteratively
     - Produce frequent working iterations
     - Freeze requirements during iterations
-- Treat tests as a key resource:
+- Treat tests as a key resource
     - Do not start any new development until all tests pass
     - Test first
 - Express requirements through scenarios
