@@ -125,6 +125,7 @@ Commands | Explanation
 `$ npm -v` | Print npm version
 `$ npm install npm@latest -g` | Update npm
 `$ npm help` | List of available commands
+`$ npm list` | List all the versions of packages that are installed, as well as their dependencies, in a tree-structure
 
 Sources
 -------
