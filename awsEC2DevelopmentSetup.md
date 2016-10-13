@@ -39,6 +39,6 @@ For example, it can/should be set to:
 - Source: `0.0.0.0/0`
 
 ### Send HTTP request to your AWS Linux Instance using curl
-`curl --cacert ~/.ssh/<your-AWS-key.pem> -H 'Accept: application/json; indent=4' http://107.21.171.13:8000`
+An example: `curl --cacert ~/.ssh/<your-AWS-key.pem> -H 'Accept: application/json; indent=4' http://107.21.171.13:8000`
 
 NOTE: The AWS EC2 Linux machine's url may be different, check it by going to the AWS dashboard Also provide the ssh key
