@@ -38,7 +38,11 @@ For example, it can/should be set to:
 - Port Range: `8000`
 - Source: `0.0.0.0/0`
 
-### Send HTTP request to your AWS Linux Instance using curl
+#### Send HTTP request to your AWS Linux Instance using curl
 `curl --cacert ~/.ssh/<your-AWS-key.pem> -H 'Accept: application/json; indent=4' http://107.21.171.13:8000`
 
 NOTE: The AWS EC2 Linux machine's url may be different, check it by going to the AWS dashboard Also provide the ssh key
+
+#### Sources
+- https://ashokfernandez.wordpress.com/2014/03/11/deploying-a-django-app-to-amazon-aws-with-nginx-gunicorn-git/
+- http://stackoverflow.com/questions/9865621/connecting-to-ec2-django-development-server
