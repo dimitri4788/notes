@@ -96,8 +96,11 @@ $ git branch -a
 # create a new branch
 $ git branch myNewBranch
 
-# delete a branch
+# delete a local branch
 $ git branch -d myBranch
+
+# delete a remote branch (remote-name=origin)
+$ git push remote-name --delete <branchname>
 
 # rename a branch
 # git branch -m <oldname> <newname>
