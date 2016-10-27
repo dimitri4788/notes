@@ -22,3 +22,6 @@ Character Encoding
     - UTF-8 is fairly compact; the majority of code points are turned into two bytes, and values less than 128 occupy only a single byte.
     - If bytes are corrupted or lost, it’s possible to determine the start of the next UTF-8-encoded code point and resynchronize. It’s also unlikely that random 8-bit data will look like valid UTF-8.
 - There’s also a UTF-16 encoding, but it’s less frequently used than UTF-8.
+
+### Sources
+- http://www.skorks.com/2009/08/different-types-of-encoding-schemes-a-primer/
