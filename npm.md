@@ -111,8 +111,9 @@ Some packages, e.g., cli packages only contain an executable command-line interf
 #### Commands
 Commands | Explanation
 --- | ---
-`$ npm install <moduleName>` | Install a local module
-`$ npm install <moduleName> -g` | Install/Update a global module
+`$ npm install <moduleName/packageName>` | Install a local module
+`$ npm install <moduleName/packageName> -g` | Install/Update a global module
+`$ npm install <moduleName/packageName> --save --save-exact` | Install a package and also update exact package dependencies to package.json
 `$ npm uninstall <moduleName>` | Uninstall a module
 `$ npm update <moduleName>` | Update a module
 `$ npm update -g` | Update all global packages
