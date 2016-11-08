@@ -127,6 +127,9 @@ Commands | Explanation
 `$ npm install npm@latest -g` | Update npm
 `$ npm help` | List of available commands
 `$ npm list` | List all the versions of packages that are installed, as well as their dependencies, in a tree-structure
+`$ npm init` | Interactively create a package.json file
+`$ npm init -f, --force, -y, or --yes` | Create a package.json file with defaults without prompting you
+
 
 Sources
 -------

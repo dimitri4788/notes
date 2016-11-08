@@ -19,11 +19,8 @@ HTML
 - Conditional comments: `<!--[if IE]><link href="stupidie.css" rel="stylesheet"><![endif]-->`
     - Everything between <!--[if IE]> and <![endif]--> will be picked up by Internet Explorer
 
-
-
 #### Links
 - [HTML Tutorials](http://www.htmldog.com/guides/html/)
-
 
 CSS
 ---
@@ -45,10 +42,20 @@ CSS
     - **@font-face**
         - It is a technique for embedding fonts in a web page so that a typeface can be used even if it isn’t sitting on the user’s computer
 
-#### Libraries
+#### Libraries/Frameworks
 - normalize.min.css
 - bootstrap.min.css
 - font-awesome.min.css
+- blueprint
+- unsemantic
+- bluetrip
+- elasticss
+- bootstrap
+- foundation
+- kube
+- groundwork
+- semantic ui
+- Purecss
 
 #### Links
 - [CSS Tutorials](http://www.htmldog.com/guides/css/)
@@ -58,12 +65,23 @@ CSS
 
 JavaScript
 ----------
+- Getting an Element
+    - **document.getElementById**: returns a single Node
+    - **document.getElementsByTagName**: returns a NodeList
+    - **document.getElementsByClassName**: returns a NodeList
+    - **document.querySelector**: returns a single Node
+    - **document.querySelectorAll**: returns a NodeList
+
+
 
 
 #### Frameworks
 - [Node.js](https://nodejs.org/en/)
 - [Express.js](http://expressjs.com/)
 - [Bootstrap](http://www.w3schools.com/bootstrap/default.asp)
+
+#### Links
+- [JavaScript Tutorials](http://www.htmldog.com/guides/javascript/)
 
 
 Useful Tools/Links

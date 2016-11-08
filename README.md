@@ -13,6 +13,7 @@ Here you will find notes related to Computer Science stuff.
 - [C++11](https://github.com/deep4788/notes/blob/master/cPlusPlusEleven.md)
 - [C++ Stuff](https://github.com/deep4788/notes/blob/master/cPlusPlusStuff.md)
 - [CHANGELOG](https://github.com/deep4788/notes/blob/master/changelog.md)
+- [Database Concepts](https://github.com/deep4788/notes/blob/master/databaseConcepts.md)
 - [Encoding Schemes](https://github.com/deep4788/notes/blob/master/encodingSchemes.md)
 - [CMake Info](https://github.com/deep4788/notes/blob/master/cmakeInfo.md)
 - [GDB and LLDB](https://github.com/deep4788/notes/blob/master/gdbAndLldb.md)
