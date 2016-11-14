@@ -20,10 +20,28 @@ Hello World
 #### Node.js - npm (Node Package Manager)
 npm provides two main functionalities:
 
-- Online repositories for Node.js packages/modules which are searchable on search.nodejs.org
+- Online repositories for Node.js packages/modules which are searchable on **search.nodejs.org** or **https://www.npmjs.com/**
 - Command line utility to install Node.js packages, do version management and dependency management of Node.js packages
 
 See *npm.md* document for more detail
+
+#### Module Types
+Node.js includes three types of modules:
+
+- Core Modules
+- Local Modules
+- Third Party Modules
+
+The following table lists some of the important core modules in Node.js.
+
+Core Modules | Description
+--- | ---
+https | http module includes classes, methods and events to create Node.js http server.
+url | url module includes methods for URL resolution and parsing.
+querystring | querystring module includes methods to deal with query string.
+path | path module includes methods to deal with file paths.
+fs | fs module includes classes, methods, and events to work with file I/O.
+util | util module includes utility functions useful for programmers.
 
 
 
@@ -35,3 +53,5 @@ Commands | Explanation
 #### Sources
 - https://nodejs.org/en/
 - https://www.tutorialspoint.com/nodejs/index.htm
+- http://www.tutorialsteacher.com/nodejs/nodejs-modules
+- https://www.npmjs.com/

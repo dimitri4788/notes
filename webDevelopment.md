@@ -71,6 +71,35 @@ JavaScript
     - **document.getElementsByClassName**: returns a NodeList
     - **document.querySelector**: returns a single Node
     - **document.querySelectorAll**: returns a NodeList
+- **==** operator checks only for values, while **===** (equality operator) expects equality in both type and value
+- JavaScript objects cannot be compared
+    - `var x = new String("John"); var y = new String("John")`
+    - (x == y) is false because x and y are different objects
+    - (x == x) is true because both are the same object
+- String methods
+    - length, indexOf(...), lastIndexOf(...), search(...), slice(start, end), substring(start, end), substr(start, length), replace(...) etc.
+- How to Recognize an Array
+    - `var fruits = ["Banana", "Orange", "Apple", "Mango"]`
+    - `Array.isArray(fruits)`   // returns true
+    - `fruits instanceof Array` // returns true
+    - `fruits.constructor.toString().indexOf("Array") > -1` //returns true
+- JavaScript Data Types
+    - Primitive values are: strings ("John Doe"), numbers (3.14), true, false, null, and undefined
+    - 5 different data types that can contain values:
+        - string
+        - number
+        - boolean
+        - object
+        - function
+    - 3 types of objects:
+        - Object
+        - Date
+        - Array
+    - 2 data types that cannot contain values:
+        - null
+        - undefined
+- Function arguments are passed by value
+- Objects are passed by reference
 
 
 
