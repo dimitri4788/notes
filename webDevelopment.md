@@ -111,6 +111,8 @@ JavaScript
 
 #### Links
 - [JavaScript Tutorials](http://www.htmldog.com/guides/javascript/)
+- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+- [JavaScript Promises](https://developers.google.com/web/fundamentals/getting-started/primers/promises)
 
 
 Useful Tools/Links
