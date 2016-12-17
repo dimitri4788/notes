@@ -54,3 +54,4 @@ CSS
 - [CSS Selectors](http://www.htmldog.com/references/css/selectors/)
 - [Google Fonts](https://fonts.google.com/)
 - [Typekit (purchase fonts)](https://typekit.com/)
+- [Specificity Calculator](https://specificity.keegan.st/)
