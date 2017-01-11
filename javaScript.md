@@ -1,5 +1,5 @@
-Web Development
-===============
+JavaScript
+==========
 
 **ECMAScript**: ECMAScript trademarked scripting-language specification standardized by Ecma International. It was based on JavaScript, which now tracks ECMAScript. It is commonly used for client-side scripting on the World Wide Web.
 
@@ -7,23 +7,6 @@ ECMAScript is supported in many applications, especially Web browsers, where it 
 
 Latest edition as of 10/15/2016 is 6, ES6 or ECMAScript 2015.
 
-HTML
-----
-- A link can also send a user to another part of the same page they are on. You can add an id attribute to just about any tag, for example `<h2 id="moss">Moss</h2>`, and then link to it by using something like this: `<a href="#moss">Go to moss</a>`. Selecting this link will scroll the page straight to the element with that ID.
-- Difference between **span** and **div** is that a span element is in-line and usually used for a small chunk of HTML inside a line (such as inside a paragraph) whereas a div (division) element is block-line (which is basically equivalent to having a line-break before and after it) and used to group larger chunks of code.
-- Interesting tags (not so often used)
-    - abbreviations (abbr), quotations (q), computer code (code), cite, pre
-    - address, dfn, bdo, del, ins
-- Sectioning tags
-    - article, section, header, footer, aside, figure, nav (navigation)
-- Conditional comments: `<!--[if IE]><link href="stupidie.css" rel="stylesheet"><![endif]-->`
-    - Everything between <!--[if IE]> and <![endif]--> will be picked up by Internet Explorer
-
-#### Links
-- [HTML Tutorials](http://www.htmldog.com/guides/html/)
-
-JavaScript
-----------
 - Getting an Element
     - **document.getElementById**: returns a single Node
     - **document.getElementsByTagName**: returns a NodeList
@@ -59,9 +42,6 @@ JavaScript
         - undefined
 - Function arguments are passed by value
 - Objects are passed by reference
-
-
-
 
 #### Frameworks
 - [Node.js](https://nodejs.org/en/)

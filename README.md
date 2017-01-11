@@ -20,7 +20,9 @@ Here you will find notes related to Computer Science stuff.
 - [CMake Info](https://github.com/deep4788/notes/blob/master/cmakeInfo.md)
 - [GDB and LLDB](https://github.com/deep4788/notes/blob/master/gdbAndLldb.md)
 - [Git Tutorial](https://github.com/deep4788/notes/blob/master/gitTutorial.md)
+- [HTML](https://github.com/deep4788/notes/blob/master/html.md)
 - [HTML Best Practices](https://github.com/deep4788/notes/blob/master/htmlBestPractices.md)
+- [JavaScript](https://github.com/deep4788/notes/blob/master/javaScript.md)
 - [Linux Stuff](https://github.com/deep4788/notes/blob/master/linuxStuff.md)
 - [Makefile Info](https://github.com/deep4788/notes/blob/master/MakefileInfo.md)
 - [Node.js Info](https://github.com/deep4788/notes/blob/master/nodejs.md)
@@ -35,7 +37,6 @@ Here you will find notes related to Computer Science stuff.
 - [URLs](https://github.com/deep4788/notes/blob/master/urls.md)
 - [Valgrind](https://github.com/deep4788/notes/blob/master/valgrind.md)
 - [Vim Tricks](https://github.com/deep4788/notes/blob/master/vimTricks.md)
-- [Web Development](https://github.com/deep4788/notes/blob/master/webDevelopment.md)
 
 Author
 ------
