@@ -252,3 +252,17 @@ How to add text at the end of each line in Vim?
 (comma in this example)  
 :%s/$/,/
 
+How to sort lines alphabetically?
+---------------------------------
+Select all the lines  
+Type `:sort`  
+
+Delete in insert mode
+---------------------
+```
+<C-h> " delete back one character (backspace)
+<C-w> " delete back one word
+<C-u> " delete back to start of line
+<C-k> " delete forward to end of line
+```
+

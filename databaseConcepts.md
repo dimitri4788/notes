@@ -70,3 +70,12 @@ Views
     - Hide some data from some users
     - Make some queries easier / more natural
     - Modularity of database access
+
+Stored Procedures
+-----------------
+- Collection of MySQL statements that can be run all together
+- Some benefits include:
+    - **Maintainability**: you can change the logic in the procedure without needing to edit app1, app2 and app3 calls.
+    - **Security/Access Control**: it's easier to worry about who can call a predefined procedure than it is to control who can access which tables or which table rows.
+    - **Performance**: if your app is not situated on the same server as your DB, and what you're doing involves multiple queries, using a procedure reduces the network overhead by involving a single call to the database, rather than as many calls as there are queries.
+    - **Performance**: stored procedures are compiled once and stored in executable form, so procedure calls are quick and efficient. Executable code is automatically cached and shared among users. This lowers memory requirements and invocation overhead. 

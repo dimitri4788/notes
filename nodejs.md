@@ -70,6 +70,17 @@ Commands | Explanation
 `$ node --trace-sync-io <application-file-name>` | Print a stack trace whenever synchronous I/O is detected after the first turn of the event loop
 
 <hr>
+#### Upgrade Node.js via NPM
+```
+$ sudo npm cache clean -f
+$ sudo npm install -g n
+$ sudo n stable
+
+# Once your installation is complete, you can confirm your version with:
+$ node -v
+```
+
+<hr>
 #### Useful resources
 - [Node.js Best Practices](https://www.codementor.io/mattgoldspink/tutorials/nodejs-best-practices-du1086jja)
 - [Advanced, production process manager for Node.js](http://pm2.keymetrics.io/)
