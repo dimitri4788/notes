@@ -37,6 +37,7 @@ Here you will find notes related to Computer Science stuff.
 - [URLs](https://github.com/deep4788/notes/blob/master/urls.md)
 - [Valgrind](https://github.com/deep4788/notes/blob/master/valgrind.md)
 - [Vim Tricks](https://github.com/deep4788/notes/blob/master/vimTricks.md)
+- [Vue.js](https://github.com/deep4788/notes/blob/master/vuejs.md)
 
 Author
 ------
