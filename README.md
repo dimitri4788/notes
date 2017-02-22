@@ -30,6 +30,7 @@ Here you will find notes related to Computer Science stuff.
 - [OS Stuff](https://github.com/deep4788/notes/blob/master/osStuff.md)
 - [Python Info](https://github.com/deep4788/notes/blob/master/pythonNotes.md)
 - [RESTful API Best Practices](https://github.com/deep4788/notes/blob/master/restFulApiPractices.md)
+- [Sass](https://github.com/deep4788/notes/blob/master/sass.md)
 - [Shell Tricks](https://github.com/deep4788/notes/blob/master/shellTricks.md)
 - [Software Testing](https://github.com/deep4788/notes/blob/master/softwaretesting.md)
 - [Static and Dynamic Libraries](https://github.com/deep4788/notes/blob/master/staticAndDynamicLibraries.md)
