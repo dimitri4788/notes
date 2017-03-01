@@ -1,6 +1,11 @@
 Vue.js
 ======
 
+- Created getter and setter for data properties; the data properties are reactive, Vue.js watches for the changes
+- Internally, Vue.js uses a queue which acts as a buffer for all of the data properties changes that have been applied within the same event loop; it does so asynchronously, even though it looks synchronous
+    - This event loop checks for the changes to the data that haven't been applied to the DOM yet and applied them. It every now and then kicks in apply the changes
+- Uses virtual DOM; sits between DOM and the Vue instance
+
 Basic Syntax:
 
 ```
