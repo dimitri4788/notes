@@ -179,6 +179,33 @@ var vm = new Vue({
 vm.a = 2 // -> new: 2, old: 1
 ```
 
+##Adding watchers dynamically
+
+```
+var vm = new Vue({
+    data: {
+        age: "28",
+        person: {
+            name: {
+                firstname: "Andy",
+                lastname: "Smith"
+            }
+        }
+    }
+});
+
+//Watching a property
+vm.$watch("age", function(newValue, oldValue) {
+    console.log("Value of age changed from " + oldValue + " to " + newValue);
+});
+
+//Watching an object
+vm.$watch("person.name", function(newValue, oldValue) {
+    console.log("Value of person.name changed from " + oldValue + " to " + newValue);
+}, { deep: true });
+
+NOTE: We can watch computed properties too
+```
 
 
 
