@@ -315,3 +315,25 @@ $ top -b -n 1
 
 # Useful link: http://www.thegeekstuff.com/2010/01/15-practical-unix-linux-top-command-examples/
 ```
+
+###Clipboard: pbcopy/pbpaste
+```sh
+# Copy public ssh key to system clipboard for pasting into Github
+$ pbcopy < ~/.ssh/id_rsa.pub
+
+# Paste something copied from the internet to a file
+$ pbpaste > main.cpp
+
+# Append something copied from the internet to the END a file
+$ pbpaste >> main.cpp
+
+# Copy public IP address to clipboard
+$ curl -Ss icanhazip.com | pbcopy
+
+# Replace what is in clipboard with the base64 encoded version of itself
+$ pbpaste | base64 | pbcopy
+
+# In linux, put the following in ~/.bashrc to create the same effect
+$ alias pbcopy='xclip -selection clipboard'
+$ alias pbpaste='xclip -selection clipboard -o'
+```
