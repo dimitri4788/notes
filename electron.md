@@ -47,6 +47,18 @@ CSS variables, also known as CSS custom properties. They can be useful for reduc
 - [Electron DevTools Extension](http://electron.atom.io/devtron/)
 - [Spectron: Electron Testing Framework](http://electron.atom.io/spectron/)
 
+## List of things to make Electron app feel native and pro
+- Dock and tray integration
+- Notifications
+- Menus
+- Shortcuts
+- Drag and drop
+- Crash reporting
+- Signed installers
+- Automatic updaters
+- Fast startup
+- One-step build
+
 #### Useful Links
 - [Electron API List](http://electron.atom.io/docs/api/)
 - [Electron Documentation](http://electron.atom.io/docs/)
