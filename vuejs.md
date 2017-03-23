@@ -156,7 +156,7 @@ new Vue({
 });
 ```
 
-##Watch data for changes
+## Watch data for changes
 An object where keys are expressions to watch and values are the corresponding callbacks. The value can also be a string of a method name, or an Object that contains additional options
 
 ```
@@ -179,7 +179,7 @@ var vm = new Vue({
 vm.a = 2 // -> new: 2, old: 1
 ```
 
-##Adding watchers dynamically
+## Adding watchers dynamically
 
 ```
 var vm = new Vue({

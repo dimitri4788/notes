@@ -1,4 +1,4 @@
-##Valgrind
+## Valgrind
 
 Valgrind is an instrumentation framework for building dynamic analysis tools. It comes with a set of tools each of which performs some kind of debugging, profiling, or similar task that helps you improve your programs. Valgrind's architecture is modular, so new tools can be created easily and without disturbing the existing structure.  
 
@@ -22,21 +22,21 @@ Valgrind distinguishes 4 different types of memory leaks in the generated output
 NOTE: Directly and Indirectly Lost leaks are also referred as Definitely Lost leaks.  
 
 
-####Still reachable blocks
+#### Still reachable blocks
 A block of memory is reported to be Still Reachable when Memcheck finds, after process execution ends, at least one pointer with the start address of the block (a start-pointer).
 
-####Definitely Lost blocks
+#### Definitely Lost blocks
 A leak is considered Definitely Lost when, at process exit, there is no pointer or chain of pointers to the leaked memory block:  
 - When the start-pointer of a block of memory is fully lost, and also no other interior-pointer to that block of memory is available when process ends; Memcheck will report that block of memory as a ’Directly Lost’ leak.
 - When Memcheck finds a valid start-pointer or interior-pointer to a given block of memory, but that pointer is in another block which is ’Directly Lost’, Memcheck will report the block of memory as an ’Indirectly Lost’ leak.
 - Finally, when Memcheck finds a valid start-pointer or interior-pointer to a given block of memory, but that pointer is in another block which is ’Indirectly Lost’, Memcheck will report the block of memory as also being ’Indirectly Lost’.
 NOTE: The ’Definitely Lost’ memory leaks (both Direct and Indirect) are the ones the programmer should pay more attention to, as they clearly show real programming errors.
 
-####Possibly Lost blocks
+#### Possibly Lost blocks
 The term ’possibly’ here states that Valgrind does not know whether the leak is ’Definitely Lost’ or ’Still Reachable’: but the leaks are really of one of these two types. In other words, it’s a task for the programmer to check whether the leak is reachable or not. The ’Possibly Lost’ leaks will be reported in the absence of a valid start-pointer to the block, but when at least one interior-pointer is found. As you already know, Memcheck cannot decide if the interior-pointer is a valid one, or just a funny coincidence. As a rule of thumb, anyway, those interior-pointers should be treated as valid ones (and decide the real type of leak based on that).
 
 
-####Command Line
+#### Command Line
 ```sh
 $ valgrind --tool=memcheck --show-reachable=yes --error-limit=no --leak-check=full --suppressions=<file.supp> someprog
 
@@ -44,7 +44,7 @@ $ valgrind --tool=memcheck --show-reachable=yes --error-limit=no --leak-check=fu
 $ valgrind --tool=memcheck --show-reachable=yes --error-limit=no --leak-check=full --suppressions=<file.supp> someprog 2>&1 | tee -a ~/fileName.txt
 ```
 
-####Flags
+#### Flags
 - --tool=<toolname> [default: memcheck]  
 Run the Valgrind tool called toolname, e.g. memcheck, cachegrind, callgrind, helgrind, drd, massif, lackey, none, exp-sgcheck, exp-bbv, exp-dhat, etc.
 
@@ -69,7 +69,7 @@ Specifies the leak kinds to show in a full leak search, in one of the following 
     - all to specify the complete set (all leak kinds). It is equivalent to --show-leak-kinds=definite,indirect,possible,reachable
     - none for the empty set
 
-####Configiration file for Valgrind
+#### Configiration file for Valgrind
 A file in the home directory with name **.valgrindrc** can be created with content for example:  
 ```sh
 --memcheck:leak-check=full
@@ -80,12 +80,12 @@ A file in the home directory with name **.valgrindrc** can be created with conte
 ```
 Rather than having to type all the command line options on the terminal each time, it's more sensible to write it to an rc file. Each time it runs, valgrind looks for options in files called ~/.valgrindrc and ./.valgrindrc.
 
-####Valgrind Suppression File
+#### Valgrind Suppression File
 Valgrind is (mostly) a memory error detector for Linux. It's very good at finding leaks and uninitialised variables; unfortunately it's too good, and usually produces a number of false positives. It comes with suppression files which automatically silence some of these.  
 When valgrind runs its default tool, Memcheck, it automatically tries to read a file called $PREFIX/lib/valgrind/default.supp ($PREFIX will normally be /usr). However you can make it use additional suppression files of your choice by adding --suppressions=<filename> to your command-line invocation.
 
 
-####Sources
+#### Sources
 - http://es.gnu.org/~aleksander/valgrind/valgrind-memcheck.pdf
 - http://valgrind.org/docs/manual/mc-manual.html
 - https://wiki.wxwidgets.org/Valgrind_Suppression_File_Howto

@@ -1,69 +1,67 @@
 Some cool tricks in Vim
 =======================
 
-This file contains some useful tricks in Vim.
+This file contains some useful tricks in Vim.  
 
-<br>
-
-####Make vim into a hex editor
+#### Make vim into a hex editor
 :%!xxd  
 :%!xxd -r  
 
-####Replace all occurrences in all lines of word foo with bar
+#### Replace all occurrences in all lines of word foo with bar
 :%s/foo/bar/g
 
-####Replace all occurrences in current line of word foo with bar
+#### Replace all occurrences in current line of word foo with bar
 :s/foo/bar/g
 
-####Creates an HTML rendering of the current file:
+#### Creates an HTML rendering of the current file:
 :%TOhtml
 
-####Show trailing whitespaces:
+#### Show trailing whitespaces:
 /\s\+$
 
-####In normal mode, typing gg=G will reindent the entire file
+#### In normal mode, typing gg=G will reindent the entire file
 gg=G
 
-####Search for FRED OR JOE (a '\' is needed before '|')
+#### Search for FRED OR JOE (a '\' is needed before '|')
 /fred\|joe
 
-####Search for exactly 4 digit numbers
+#### Search for exactly 4 digit numbers
 /\<\d\d\d\d\>  
 /\<\d\{4}\>  
 
-####find 3 empty lines
+#### Find 3 empty lines
 /^\n\{3}
 
-####Search for goat between lines 20 and 30
+#### Search for goat between lines 20 and 30
 /\%>20l\%<30lgoat
 
-####Delete DOS returns ^M
+#### Delete DOS returns ^M
 :%s/\r//g
 
-####Press 'R' (uppercase)
+#### Press 'R' (uppercase)
 Use R to enter insert mode with an overstrike cursor, which types over existing characters
 
-####Jump top/middle/bottom of the screen using
+#### Jump top/middle/bottom of the screen using
 H/M/L
 
-####Toggle the case of the character under the cursor
+#### Toggle the case of the character under the cursor
 ~
 
-####Clears the current line and enters insert mode
+#### Clears the current line and enters insert mode
 S
 
-####Highlight non-ASCII characters
+#### Highlight non-ASCII characters
 /[^\x00-\x7F]  
 This will do a negative match (via [^]) for characters between ASCII 0x00 and ASCII 0x7F (0-127), and appears to work in simple test. For extended ASCII, extend the range up to \xFF instead of \x7F using /[^\x00-\xFF].
 
-####Add a newline after a given pattern
+#### Add a newline after a given pattern
 Say you want to add newline between all the comma. Suppose you want to insert a line break before each comma ',' in a line. To do that, enter these commands  
 /,  
 :s//\r&/g  
 The first command searches for any occurrence of each of the three characters. You can refine this search (that is, search again after correcting any problems with the search pattern). When the search correctly highlights the wanted hits, enter the second command to insert a newline before each hit in the current line. In the substitute command, the find pattern is empty, so the last search is used; in the replacement, \r inserts a newline and & inserts the search hit.  
 Use :%s//\r&/g if you want to replace all occurrences in all lines.  
 
-####All the right moves
+#### All the right moves
 ```
 h   move one character left
 j   move one row down
