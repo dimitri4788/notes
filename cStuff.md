@@ -13,6 +13,10 @@ Useful Info
 - Comparing Unix/Linux IPC
     - http://stackoverflow.com/questions/404604/comparing-unix-linux-ipc
 
+C preprocessor (cpp)
+--------------------
+**#include_next**: https://gcc.gnu.org/onlinedocs/cpp/Wrapper-Headers.html
+
 NOTE
 ----
 Look in the code/src directory for some cool stuff.

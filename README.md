@@ -8,7 +8,6 @@ Here you will find notes related to Computer Science stuff.
 - [AWS EC2 Development Setup](https://github.com/deep4788/notes/blob/master/awsEC2DevelopmentSetup.md)
 - [Boost Library](https://github.com/deep4788/notes/blob/master/boostLibrary.md)
 - [Brew Cheatsheet](https://github.com/deep4788/notes/blob/master/brewCheatsheet.md)
-- [C Preprocessor](https://github.com/deep4788/notes/blob/master/cPreprocessor.md)
 - [C Stuff](https://github.com/deep4788/notes/blob/master/cStuff.md)
 - [C++11](https://github.com/deep4788/notes/blob/master/cPlusPlusEleven.md)
 - [C++ Stuff](https://github.com/deep4788/notes/blob/master/cPlusPlusStuff.md)
