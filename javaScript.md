@@ -7,12 +7,7 @@ ECMAScript is supported in many applications, especially Web browsers, where it 
 
 Latest edition as of 10/15/2016 is 6, ES6 or ECMAScript 2015.
 
-- Getting an Element
-    - **document.getElementById**: returns a single Node
-    - **document.getElementsByTagName**: returns a NodeList
-    - **document.getElementsByClassName**: returns a NodeList
-    - **document.querySelector**: returns a single Node
-    - **document.querySelectorAll**: returns a NodeList
+### Concepts
 - **==** operator checks only for values, while **===** (equality operator) expects equality in both type and value
 - JavaScript objects cannot be compared
     - `var x = new String("John"); var y = new String("John")`
@@ -42,6 +37,14 @@ Latest edition as of 10/15/2016 is 6, ES6 or ECMAScript 2015.
         - undefined
 - Function arguments are passed by value
 - Objects are passed by reference
+
+#### DOM Related
+- Getting an Element
+    - **document.getElementById**: returns a single Node
+    - **document.getElementsByTagName**: returns a NodeList
+    - **document.getElementsByClassName**: returns a NodeList
+    - **document.querySelector**: returns a single Node
+    - **document.querySelectorAll**: returns a NodeList
 
 #### Frameworks
 - [Node.js](https://nodejs.org/en/)

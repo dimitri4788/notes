@@ -22,6 +22,7 @@ Here you will find notes related to Computer Science stuff.
 - [HTML](https://github.com/deep4788/notes/blob/master/html.md)
 - [HTML Best Practices](https://github.com/deep4788/notes/blob/master/htmlBestPractices.md)
 - [JavaScript](https://github.com/deep4788/notes/blob/master/javaScript.md)
+- [JavaScript Design Patterns](https://github.com/deep4788/notes/blob/master/javaScriptDesignPatterns.md)
 - [Linux Stuff](https://github.com/deep4788/notes/blob/master/linuxStuff.md)
 - [Makefile Info](https://github.com/deep4788/notes/blob/master/MakefileInfo.md)
 - [Node.js Info](https://github.com/deep4788/notes/blob/master/nodejs.md)
