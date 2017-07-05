@@ -18,20 +18,21 @@ GNU Linux Stuff
 
 ##### Compiler options
 - Wall: include warnings. See man page for warnings specified
-- fPIC: Compiler directive to output position independent code, a characteristic required by shared libraries. Also see "-fpic"
+- fPIC: Compiler directive to output position independent code, a characteristic required by shared libraries. Also see `-fpic`
     - PIC stands for position-independent code. The functions in a shared library may be loaded at different addresses in different programs, so the code in the shared object must not depend on the address (or position) at which it is loaded. This consideration has no impact on you, as the programmer, except that you must remember to use the -fPIC flag when compiling code that will be used in a shared library
 - shared: Produce a shared object which can then be linked with other objects to form an executable
 - Wl,options: Pass options to linker
-    - In this example the options to be passed on to the linker are: "-soname libctest.so.1". The name passed with the "-o" option is passed to gcc
-- Option -o: Output of operation. In this case the name of the shared object to be output will be "libctest.so.1.0"
+    - In this example the options to be passed on to the linker are: `-soname libctest.so.1`. The name passed with the `-o` option is passed to gcc
+- Option -o: Output of operation. In this case the name of the shared object to be output will be `libctest.so.1.0`
 
 
 ### Library Path
-In order for an executable to find the required libraries to link with during run time, one must configure the system so that the libraries can be found. Methods available:  
+In order for an executable to find the required libraries to link with during run time, one must configure the system so that the libraries can be found. Methods available:<br>
+
 - Add library directories to be included during dynamic linking to the file /etc/ld.so.conf
     - Add the library path to this file and then execute the command (as root) ```sudo ldconfig``` to configure the linker run-time bindings
 - Add library and path explicitly to the compiler/linker command: -lname-of-lib -L/path/to/lib
-- Specify the environment variable **LD_LIBRARY_PATH** to point to the directory paths containing the shared object library
+- Specify the environment variable `LD_LIBRARY_PATH` to point to the directory paths containing the shared object library
     - This will specify to the run time loader that the library paths will be used during execution to resolve dependencies
 
 
@@ -39,7 +40,7 @@ In order for an executable to find the required libraries to link with during ru
 - **a.out**
     - a.out is a file format used in older versions of Unix-like computer operating systems for executables, object code, and, in later systems, shared libraries
     - The name stands for "assembler output"
-    - "a.out" remains the default output file name for executables created by certain compilers and linkers when no output name is specified, even though the created files actually are not in the a.out format
+    - `a.out` remains the default output file name for executables created by certain compilers and linkers when no output name is specified, even though the created files actually are not in the a.out format
     - The a.out format forced shared libraries to occupy a fixed place in memory. If you wanted to distribute an a.out shared library, you had to register its address space. This was good for performance but it didn't scale at all
         - Linux's transition to ELF was more or less forced due to the complex nature of building a.out shared libraries on that platform, which included the need to register the virtual address space at which the library was located with a central authority, as the a.out ld.so in Linux was unable to relocate shared libraries
 - **ELF**
@@ -102,12 +103,14 @@ In order for an executable to find the required libraries to link with during ru
 
 
 ### Symbols and Symbol Resolution
-Every relocatable object file has a symbol table and associated symbols. In the context of a linker, the following kinds of symbols are present:  
+Every relocatable object file has a symbol table and associated symbols. In the context of a linker, the following kinds of symbols are present:<br>
+
 - **Global symbols defined by the module and referenced by other modules**. All non-static functions and global variables fall in this category.
 - **Global symbols referenced by the input module but defined elsewhere**. All functions and variables with extern declaration fall in this category.
 - **Local symbols defined and referenced exclusively by the input module**. All static functions and static variables fall here.
 
-During the process of symbol resolution using static libraries, linker scans the relocatable object files and archives from left to right as input on the command line. During this scan, linker maintains a set of O, relocatable object files that go into the executable; a set U, unresolved symbols; and a set of D, symbols defined in previous input modules. Initially, all three sets are empty.  
+During the process of symbol resolution using static libraries, linker scans the relocatable object files and archives from left to right as input on the command line. During this scan, linker maintains a set of O, relocatable object files that go into the executable; a set U, unresolved symbols; and a set of D, symbols defined in previous input modules. Initially, all three sets are empty.<br>
+
 - For each input argument on the command line, linker determines if input is an object file or an archive. If input is a relocatable object file, linker adds it to set O, updates U and D and proceeds to next input file.
 - If input is an archive, it scans through the list of member modules that constitute the archive to match any unresolved symbols present in U. If some archive member defines any unresolved symbol that archive member is added to the list O, and U and D are updated per symbols found in the archive member. This process is iterated for all member object files.
 - After all the input arguments are processed through the above two steps, if U is found to be not empty, linker prints an error report and terminates. Otherwise, it merges and relocates the object files in O to build the output executable file.
@@ -115,7 +118,8 @@ During the process of symbol resolution using static libraries, linker scans the
 NOTE: This also explains why static libraries are placed at the end of the linker command. Special care must be taken in cases of cyclic dependencies between libraries. Input libraries must be ordered so each symbol is referenced by a member of an archive and at least one definition of a symbol is followed by a reference to it on the command line. Also, if an unresolved symbol is defined in more than one static library modules, the definition is picked from the first library found in the command line.
 
 ### Relocation
-Once the linker has resolved all the symbols, each symbol reference has exactly one definition. At this point, linker starts the process of relocation, which involves the following two steps:  
+Once the linker has resolved all the symbols, each symbol reference has exactly one definition. At this point, linker starts the process of relocation, which involves the following two steps:<br>
+
 - Relocating sections and symbol definitions. Linker merges all the sections of the same type into a new single section. For example, linker merges all the .data sections of all the input relocatable object files into a single .data section for the final executable. A similar process is carried out for the .code section. The linker then assigns runtime memory addresses to new aggregate sections, to each section defined by the input module and also to each symbol. After the completion of this step, every instruction and global variable in the program has a unique loadtime address.
 - Relocating symbol reference within sections. In this step, linker modifies every symbol reference in the code and data sections so they point to the correct loadtime addresses.
 
@@ -139,6 +143,7 @@ Shared libraries can be loaded from applications even in the middle of their exe
 - **readelf** - displays information about ELF files
 - **strings** - list all the printable strings in a binary file
 - **strip** - deletes the symbol table information
+- **otool** - object file displaying tool
 
 ### Useful reads
 #### Linker (ld)
@@ -146,3 +151,5 @@ Shared libraries can be loaded from applications even in the middle of their exe
     - http://stackoverflow.com/questions/45135/why-does-the-order-in-which-libraries-are-linked-sometimes-cause-errors-in-gcc
 - http://www.linuxjournal.com/article/6463?page=0,0
 - http://www.iecc.com/linker/
+- [How is a binary executable organized?](https://jvns.ca/blog/2014/09/06/how-to-read-an-executable/)
+- [How do UNIX linkers work with archive libraries, and why the order of objects and libraries on the link line matters](http://webpages.charter.net/ppluzhnikov/linker.html)

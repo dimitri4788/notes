@@ -25,6 +25,7 @@ Here you will find notes related to Computer Science stuff.
 - [JavaScript Design Patterns](https://github.com/deep4788/notes/blob/master/javaScriptDesignPatterns.md)
 - [Linux Stuff](https://github.com/deep4788/notes/blob/master/linuxStuff.md)
 - [Makefile Info](https://github.com/deep4788/notes/blob/master/MakefileInfo.md)
+- [MySQL](https://github.com/deep4788/notes/blob/master/mysql.md)
 - [Node.js Info](https://github.com/deep4788/notes/blob/master/nodejs.md)
 - [npm Info](https://github.com/deep4788/notes/blob/master/npm.md)
 - [OS Stuff](https://github.com/deep4788/notes/blob/master/osStuff.md)
@@ -39,8 +40,3 @@ Here you will find notes related to Computer Science stuff.
 - [Valgrind](https://github.com/deep4788/notes/blob/master/valgrind.md)
 - [Vim Tricks](https://github.com/deep4788/notes/blob/master/vimTricks.md)
 - [Vue.js](https://github.com/deep4788/notes/blob/master/vuejs.md)
-
-Author
-------
-Deep Aggarwal  
-deep.uiuc@gmail.com  

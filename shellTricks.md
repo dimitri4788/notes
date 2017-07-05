@@ -117,7 +117,7 @@ $ grep -RnI "\s\+$" *
 $ sed -i 's/\s\+$//g' *
 ```
 
-###grep
+### grep
 ```sh
 Beginning of line (^): grep "^Nov 10" logFile.txt
 End of the line ($): grep "terminating.$" messages.txt
@@ -131,7 +131,7 @@ $ grep  -v "^#\|^'\|^\/\/" logFile.txt: This command searches for the line which
 Word boundary (\b): grep -i "\bthe\b" logFile.txt: \b is to match for a word boundary. \b matches any character(s) at the beginning (\bxx) and/or end (xx\b) of a word
 ```
 
-###find
+### find
 ```sh
 # How to find all the files greater than certain size?
 $ find . -type f -size +100M
@@ -147,7 +147,7 @@ $ find / -type f -name *.tar.gz -size +100M -exec ls -l {} \;
 $ find / -type f -name *.tar.gz -size +100M -exec rm -f {} \;
 ```
 
-###xargs
+### xargs
 ```sh
 # xargs is a very powerful command that takes output of a command and pass it as argument to another command
 
@@ -158,7 +158,7 @@ $ find ~ -name ‘*.log’ -print0 | xargs -0 rm -f
 $ find /etc -name "*.conf" | xargs ls –l
 ```
 
-###sort
+### sort
 ```sh
 # Sort a text file in ascending order
 $ sort names.txt
@@ -170,7 +170,7 @@ $ sort -r names.txt
 $ sort -t: -k 2 names.txt
 ```
 
-###cut
+### cut
 ```sh
 # Display the 1st field (employee name) from a colon delimited file
 $ cut -d: -f 1 names.txt
@@ -182,7 +182,7 @@ $ cut -d: -f 1,3 names.txt
 $ cut -c 1-8 names.txt
 ```
 
-###sed
+### sed
 ```sh
 $ sed 'ADDRESSs/REGEXP/REPLACEMENT/FLAGS' filename
 $ sed 'PATTERNs/REGEXP/REPLACEMENT/FLAGS' filename
@@ -220,7 +220,7 @@ $ sed -e 's/#.*//' thegeekstuff.txt
 $ sed -e 's/#.*//;/^$/d' thegeekstuff.txt
 ```
 
-###awk
+### awk
 ```sh
 $ awk '/search pattern1/ {Actions}
        /search pattern2/ {Actions}' file
@@ -256,7 +256,7 @@ $ awk '$1 >200' employee.txt
 $ awk '$4 ~/Technology/' employee.txt
 ```
 
-###chmod
+### chmod
 ```sh
 $ chmod u+x filename  # give execute permission to the user
 $ chmod u+r,g+x filename  # give read permission to the user and execute permission to the group
@@ -265,7 +265,7 @@ $ chmod a+x filename  # assigns execute privilege to user, group and others
 $ chmod -R 755 directory-name/  # Use option -R to change the permission recursively
 ```
 
-###zip
+### zip
 ```sh
 # Zip multiple files
 $ zip var-log-files.zip /var/log/*
@@ -283,7 +283,7 @@ $ unzip -v var-log.zip
 $ unzip -l var-log.zip
 ```
 
-###top
+### top
 ```sh
 $ top
 # press "f" to select what fields to display
@@ -316,7 +316,7 @@ $ top -b -n 1
 # Useful link: http://www.thegeekstuff.com/2010/01/15-practical-unix-linux-top-command-examples/
 ```
 
-###Clipboard: pbcopy/pbpaste
+### Clipboard: pbcopy/pbpaste
 ```sh
 # Copy public ssh key to system clipboard for pasting into Github
 $ pbcopy < ~/.ssh/id_rsa.pub
