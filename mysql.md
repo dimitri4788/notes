@@ -32,6 +32,48 @@ mysql> set default_storage_engine=MYISAM
 mysql> quit
 ```
 
+## MySQL Types
+
+### Text Types
+
+- text
+- char
+- varchar
+
+### Numeric Types
+
+- int
+- float
+- double
+- decimal
+
+### Bit Types
+
+- bit
+
+### Boolean
+
+- bool
+
+### Blobs (Binary Large Object)
+
+- blob
+
+### Time, Date & Year
+
+- year
+- date
+- time
+
+### Timestamp & Datetime
+
+- timestamp
+- datetime
+
+### Enum
+
+- enum
+
 ### Resources
 
 - [Download MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
