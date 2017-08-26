@@ -5,6 +5,7 @@ Here you will find notes related to Computer Science stuff.
 
 <!-- #toc -->
 - [Agile Software Development](https://github.com/deep4788/notes/blob/master/agileSoftwareDevelopment.md)
+- [Authentication vs Authorization](https://github.com/deep4788/notes/blob/master/authenticationAndAuthorization.md)
 - [AWS EC2 Development Setup](https://github.com/deep4788/notes/blob/master/awsEC2DevelopmentSetup.md)
 - [Boost Library](https://github.com/deep4788/notes/blob/master/boostLibrary.md)
 - [Brew Cheatsheet](https://github.com/deep4788/notes/blob/master/brewCheatsheet.md)
