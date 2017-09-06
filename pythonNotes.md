@@ -1,8 +1,12 @@
 Best practices for writing Python code
 ======================================
 
-Best practices
---------------
+## Python 3 vs Python 2
+
+TODO
+
+## Best practices
+
 - `from modu import *`: This is generally considered bad practice.
     - Using `from modu import func` is a way to pinpoint the function you want to import and put it in the global namespace.
     - Very bad: `from modu import *`
@@ -17,6 +21,7 @@ Best practices
     - Leaving an \_\_init\_\_.py file empty is considered normal and even a good practice, if the package’s modules and sub-packages do not need to share any code.
     - Importing deeply nested packages: import very.deep.module as mod. This allows you to use mod in place of the verbose repetition of very.deep.module.
 - One peculiarity of Python that can surprise beginners is that strings are immutable. This means that when constructing a string from its parts, it is much more efficient to accumulate the parts in a list, which is mutable, and then glue ('join') the parts together when the full string is needed. One thing to notice, however, is that list comprehensions are better and faster than constructing a list in a loop with calls to append().
+
 ```python
 #Bad
 # create a concatenated string from 0 to 19 (e.g. "012..1819")
@@ -52,6 +57,7 @@ foo += 'ooo'  # This is bad, instead you should do:
 foo = ''.join([foo, 'ooo'])
 ```
 - Explicit code
+
 ```python
 #Bad
 def make_complex(*args):
@@ -77,6 +83,7 @@ def make_complex(x, y):
     - Truth Value Testing
         - The following values are considered false: None, False, 0, 0L, 0.0, 0j, '', (), [], {}, instances of user-defined classes if the class defines a \_\_nonzero\_\_() or \_\_len\_\_() method, when that method returns the integer zero or bool value False
         - All other values are considered true — so objects of many types are always true
+
     ```python
     #Bad
     if attr == True:
@@ -100,6 +107,7 @@ def make_complex(x, y):
     ```
 - Access a Dictionary Element
     - Don’t use the dict.has_key() method. Instead, use x in d syntax, or pass a default argument to dict.get().
+
     ```python
     #Bad
     d = {'hello': 'world'}
@@ -119,6 +127,7 @@ def make_complex(x, y):
         print d['hello']
     ```
 - Short Ways to Manipulate Lists
+
 ```python
 #Bad
 # Filter elements greater than 4
@@ -153,6 +162,7 @@ for i, item in enumerate(a):
 ```
 - Read from a file
     - Use the with open syntax to read from files. This will automatically close files for you.
+
     ```python
     #Bad
     f = open('file.txt')
@@ -167,6 +177,7 @@ for i, item in enumerate(a):
     ```
     - The with statement is better because it will ensure you always close the file, even if an exception is raised inside the with block.
 - Line Continuations
+
 ```python
 #Bad
 my_very_big_string = """For a long time I used to go to bed early. Sometimes, \
@@ -201,8 +212,8 @@ from some.deep.module.inside.a.module import (a_nice_function, another_nice_func
 
 <br>
 
-Useful Stuff
-------------
+## Useful Stuff
+
 - The `import modu` statement will look for the file modu.py in the same directory as the caller if it exists.
     - If it is not found, the Python interpreter will search for modu.py in the "path" recursively and raise an ImportError exception if it is not found.
     - Once modu.py is found, the Python interpreter will execute the module in an isolated scope.
@@ -211,6 +222,7 @@ Useful Stuff
     - Python has two kinds of built-in or user-defined types: *Mutable* and *Immutable*
         - Mutable types are those that allow in-place modification of the content. Typical mutables are lists and dictionaries: All lists have mutating methods, like list.append() or list.pop(), and can be modified in place. The same goes for dictionaries.
         - Immutable types provide no method for changing their content. For instance, the variable x set to the integer 6 has no "increment" method. If you want to compute x + 1, you have to create another integer and give it a name.
+
         ```python
         my_list = [1, 2, 3]
         my_list[0] = 4
@@ -221,6 +233,7 @@ Useful Stuff
         ```
 - Create an ignored variable
     - If you need to assign something (for instance, in Unpacking) but will not need that variable, use \_\_
+
     ```python
     filename = 'foobar.txt'
     basename, __, ext = filename.rpartition('.')
@@ -228,6 +241,7 @@ Useful Stuff
 - Create a length-N list of the same thing: `four_nones = [None] * 4`
 - Create a length-N list of lists: `four_lists = [[] for __ in xrange(4)]`
 - Create a string from a list
+
 ```python
 letters = ['s', 'p', 'a', 'm']
 word = ''.join(letters)
@@ -238,8 +252,8 @@ word = ''.join(letters)
 <br>
 
 
-Working on a new project
-------------------------
+## Working on a new project
+
 ```sh
 # Change directory to where new project is located
 $ cd <PathToYourProject>
@@ -280,8 +294,8 @@ $ cat files.txt | xargs rm -rf
 
 <br>
 
-Source
-------
+### Source
+
 - http://docs.python-guide.org/en/latest/
 - http://learnpythonthehardway.org/book/index.html
 - Introduction to Pip and Virtualenv: https://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/
@@ -294,4 +308,4 @@ Source
 - Iterators, generators and decorators:
     - http://pymbook.readthedocs.org/en/latest/igd.html
     - http://nvie.com/posts/iterators-vs-generators/
-
+- [Creating a Package](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/creation.html)
