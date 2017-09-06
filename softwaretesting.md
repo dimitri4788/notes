@@ -8,7 +8,7 @@ Test Input --> | under    | --> Test Output --> | okay?  |
                | test     |                     |        | --> No --> Debug
                |----------|                     |--------|
 ```
-**developer**: "*I want this code to succeed*"  
+**developer**: "*I want this code to succeed*"
 **tester**: "*I want this code to fail*"
 
 #### Create testable software
@@ -62,3 +62,9 @@ Test Input --> | under    | --> Test Output --> | okay?  |
     - here we use the results of the pseudo random number generator to randomly create test inputs and we deliver those to the system under test
 - Regression testing
     - it is a type of software testing that verifies that software previously developed and tested still performs correctly even after it was changed or interfaced with other software
+- Functional testing
+    - tests that focus on business requirements
+- Smoke/Sanity testing
+    - tests that it doesn't just blow up immediately
+- Acceptance testing
+    - tests done by an actual end user
