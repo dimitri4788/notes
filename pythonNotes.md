@@ -19,8 +19,22 @@ Best practices for writing Python code
 - `except`
     - `except (Exception1, Exception2), target:` in Python 2
     - `except (Exception1, Exception2) as target:` in Python 3
+- `exec`
+    - The exec statement of Python 2 has changed to a function in Python 3
+    - `exec code` in Python 2 vs `exec(code)` in Python 3
 - String Formatting
+    - Python 2: `"%d %s" % (i, s)` vs Python 3: `"{} {}".format(i, s)`
+    - Python 2: `"%d/%d=%f" % (355, 113, 355/113)` vs Python 3: `"{:d}/{:d}={:f}".format(355, 113, 355/113)`
+- `class`
+    - There is no need to state `object` in Python 3
+    - `class MyClass(object):` in Python 2 vs `class MyClass:` in Python 3
+
 TODO
+
+### Update Code to Python 3
+
+There are two main tools you can use to automatically update your code to Python 3 while keeping it compatible with Python 2: **future** and **modernize**.
+
 
 ## Best practices
 
