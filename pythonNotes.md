@@ -3,6 +3,23 @@ Best practices for writing Python code
 
 ## Python 3 vs Python 2
 
+- print
+    - `print("Hello")`
+    - `print "Hello"`
+- Division with Integers
+    - When the two numbers on either side of the division / symbol are integers, Python 2 does floor division
+    - a = 5 / 2 => 2
+    - In Python 3, integer division became more intuitive; a = 5 / 2 => 2.5
+    - To get floor division in Python 3, use `//`; a = 5 // 2 => 2
+- Python 3 uses Unicode by default
+    - it saves extra development time, and allows many more characters
+- In Python 3, raising exceptions with arguments requires parentheses, and strings cannot be used as exceptions
+    - `raise Exception(args)` in Python 3 vs `raise Exception, args` in Python 2
+    - `raise Exception("Error")` in Python 3 vs `raise "Error"` in Python 2
+- `except`
+    - `except (Exception1, Exception2), target:` in Python 2
+    - `except (Exception1, Exception2) as target:` in Python 3
+- String Formatting
 TODO
 
 ## Best practices
