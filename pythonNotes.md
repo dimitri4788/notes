@@ -1,11 +1,14 @@
-Best practices for writing Python code
-======================================
+# Python
 
 ## Python 3 vs Python 2
 
-- print
-    - `print("Hello")`
-    - `print "Hello"`
+- `print`
+    - Python 3
+        - `print("Hello")`
+        - `print("Hello", end=' ')` with newline added
+    - Python 2
+        - `print "Hello"`
+        - `print "Hello",` with newline added
 - Division with Integers
     - When the two numbers on either side of the division / symbol are integers, Python 2 does floor division
     - a = 5 / 2 => 2
@@ -28,12 +31,58 @@ Best practices for writing Python code
 - `class`
     - There is no need to state `object` in Python 3
     - `class MyClass(object):` in Python 2 vs `class MyClass:` in Python 3
+- Dictionary methods
+    - In Python 2 dictionaries have the methods `iterkeys()`, `itervalues()` and `iteritems()` that return iterators instead of lists. In Python 3 the standard `keys()`, `values()` and `items()` return dictionary views, which are iterators, so the iterator variants become pointless and are removed.
+- `filter()`
+    - In Python 2 `filter()` returns a list while in Python 3 it returns an iterator.
+- `map()`
+    - In Python 2 `map()` returns a list while in Python 3 it returns an iterator.
+- Parameter unpacking
+    - In Python 2 you have parameter unpacking, while Python 3 does not support this, so you need to do your own unpacking
 
-TODO
+    ```python
+    # Python 2
+    def unpacks(a, (b, c)):
+        return a,b,c
+
+    unpacks(1, (2,3))  # (1, 2, 3)
+
+    # Python 3
+    def unpacks(a, (b, c)):
+        return a,b[0],b[1]
+
+    unpacks(1, (2,3))  # (1, 2, 3)
+    ```
+- `range()` and `xrange()`
+    - In Python 2 `range()` returns a list, and `xrange()` returns an object that will only generate the items in the range when needed, saving memory.
+    - In Python 3, the `range()` function is gone, and `xrange()` has been renamed `range()`.
+- `repr()` as backticks
+    - In Python 2 you can generate a string representation of an expression by enclosing it with backticks. It has been removed in Python 3, since the `repr()` builtin does exactly the same.
+
+
+
+
+
+
+
+
 
 ### Update Code to Python 3
 
-There are two main tools you can use to automatically update your code to Python 3 while keeping it compatible with Python 2: **future** and **modernize**.
+There are two main tools you can use to automatically update your code to Python 3 while keeping it compatible with Python 2: [future](http://python-future.org/automatic_conversion.html) and [modernize](https://python-modernize.readthedocs.io/en/latest/).
+
+## Useful Packages / Libraries
+
+- **Coverage.py**
+    - https://github.com/nedbat/coveragepy
+    - It measures code coverage, typically during test execution. It uses the code analysis tools and tracing hooks provided in the Python standard library to determine which lines are executable, and which have been executed.
+- **Six**
+    - https://github.com/benjaminp/six
+    - It is a Python 2 and 3 compatibility library. It provides utility functions for smoothing over the differences between the Python versions with the goal of writing Python code that is compatible on both Python versions.
+- **Pylint**
+    - https://github.com/PyCQA/pylint/
+    - It is a Python source code analyzer which looks for programming errors, helps enforcing a coding standard and sniffs for some code smells.
+
 
 
 ## Best practices
