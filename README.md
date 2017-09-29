@@ -26,6 +26,7 @@ Here you will find notes related to Computer Science stuff.
 - [JavaScript Design Patterns](https://github.com/deep4788/notes/blob/master/javaScriptDesignPatterns.md)
 - [Linux Stuff](https://github.com/deep4788/notes/blob/master/linuxStuff.md)
 - [Makefile Info](https://github.com/deep4788/notes/blob/master/MakefileInfo.md)
+- [MongoDB](https://github.com/deep4788/notes/blob/master/mongodb.md)
 - [MySQL](https://github.com/deep4788/notes/blob/master/mysql.md)
 - [Node.js Info](https://github.com/deep4788/notes/blob/master/nodejs.md)
 - [npm Info](https://github.com/deep4788/notes/blob/master/npm.md)
