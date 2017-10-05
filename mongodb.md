@@ -27,10 +27,7 @@ Joins | Embedded documents, linking
 Command | Description
 --- | ---
 `show collections` | Print a list of all collections for current database
-`use <db>` | Switch current database to <db>. The mongo shell variable `db` is set to the current database.
-`` |
-`` |
-`` |
-`` |
-`` |
-`` |
+`use <db>` | Switch current database to <db>. The mongo shell variable `db` is set to the current database
+`show dbs` | Print a list of all databases on the server
+
+More commands [here](https://docs.mongodb.com/manual/reference/mongo-shell/)
