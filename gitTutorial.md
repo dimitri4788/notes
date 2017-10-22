@@ -35,6 +35,10 @@ $ git diff <fileName>  # to see the changes that are staged or modified on disk 
 $ git commit -m <message>  # to record your snapshot into history
 $ git push origin <branchName>  # to push to the remote server
 
+# Rebases the current branch on top of the upstream branch after fetching
+# So say you are in your master or feature branch and you are done with the work in it and now want to rebase it on the upstream master branch, do this
+$ git pull --rebase <upstream-url> <upstream-main-branch>  # Example: git pull --rebase upstream master
+
 # On a less typical day
 $ git status -s  # give the output in the short-format
 $ git branch -d <branchname>  # delete a local branch
