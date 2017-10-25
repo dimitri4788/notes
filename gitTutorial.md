@@ -48,6 +48,18 @@ $ git remote rename [old-alias] [new-alias]  # rename remote aliases, e.g. git r
 $ git diff --name-only --diff-filter=U  # simplest way to git a list of conflicted files
 $ git --no-pager diff --name-only SHA1 SHA2  # find file names only that changed between two commits
 $ git --no-pager diff --name-only HEAD~10 HEAD~5  # find file names only that changed between two commits
+
+# who has committed how much to your project
+$ git shortlog -sn
+
+# show only changed words rather than whole changed lines by using the --word-diff flag; useful for files like Markdown
+$ git diff --word-diff
+
+# see which branches you recently worked on
+$ git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+
+# remind yourself what you’ve been up to; I have aliased it to: git recap
+$ git log --all --oneline --no-merges --author=deep.aggarwal@4cinsights.com
 ```
 
 <br>
