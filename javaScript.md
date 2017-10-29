@@ -38,6 +38,13 @@ Latest edition as of 10/15/2016 is 6, ES6 or ECMAScript 2015.
 - Function arguments are passed by value
 - Objects are passed by reference
 
+#### JavaScript Debugging
+
+- `debugger`
+  - add in the code and the debugger will stop there
+- display data in table format using `console.table(object);`
+- Benchmark loops using `console.time()` and `console.timeEnd()`
+
 #### DOM Related
 - Getting an Element
     - **document.getElementById**: returns a single Node
